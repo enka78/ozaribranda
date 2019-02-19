@@ -5,11 +5,13 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainpageComponent } from './mainpage/mainpage.component';
+import { SliderComponent } from './slider/slider.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainpageComponent
+    MainpageComponent,
+    SliderComponent
   ],
   imports: [
     BrowserModule,
