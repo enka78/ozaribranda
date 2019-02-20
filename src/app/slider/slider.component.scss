@@ -1,0 +1,13 @@
+.carousel{
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  .carousel-inner{
+    .carousel-item{
+      img{
+        width: 100vw;
+        height: 100vh;
+      }
+    }
+  }
+}

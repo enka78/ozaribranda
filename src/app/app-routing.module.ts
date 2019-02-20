@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {MainpageComponent } from './mainpage/mainpage.component';
+import {AnasayfaComponent} from './anasayfa/anasayfa.component';
+
 
 const routes: Routes = [
-  {path: '', component: MainpageComponent}
+   {path: '', component: AnasayfaComponent }
 ];
 
 @NgModule({
