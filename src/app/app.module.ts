@@ -7,13 +7,21 @@ import { AppComponent } from './app.component';
 import { MainpageComponent } from './mainpage/mainpage.component';
 import { SliderComponent } from './slider/slider.component';
 import { AnasayfaComponent } from './anasayfa/anasayfa.component';
+import { HakkimizdaComponent } from './hakkimizda/hakkimizda.component';
+import { UrunlerComponent } from './urunler/urunler.component';
+import { IletisimComponent } from './iletisim/iletisim.component';
+import { UrunlerDetayComponent } from './urunler-detay/urunler-detay.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainpageComponent,
     SliderComponent,
-    AnasayfaComponent
+    AnasayfaComponent,
+    HakkimizdaComponent,
+    UrunlerComponent,
+    IletisimComponent,
+    UrunlerDetayComponent
   ],
   imports: [
     BrowserModule,
