@@ -1,51 +1,45 @@
 <app-slider></app-slider>
 <div class="main-container">
   <div class="logo-container">
-    <a href="">
-      <img src="../../assets/img/logo-light.png"  alt="">
-    </a>
+    <div class="flip-container">
+      <div class="flipper">
+        <div class="front">
+          <img src="../../assets/img/logo-light.png">
+        </div>
+        <div class="back">
+          <img src="../../assets/img/logo-dark.png">
+        </div>
+      </div>
+    </div>
   </div>
-    <!--<nav class="navbar navbar-expand-lg navbar-light bg-white">-->
-      <!--<a class="navbar-brand" routerLink="">-->
-        <!--<img src="../../assets/img/logo-light.png" width="30" height="30"  alt="">-->
-        <!--Özarı Branda-->
-      <!--</a>-->
-      <!--<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">-->
-        <!--<span class="navbar-toggler-icon"></span>-->
-      <!--</button>-->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-      <!--<div class="collapse navbar-collapse" id="navbarSupportedContent">-->
-        <!--<ul class="navbar-nav mr-auto">-->
-          <!--<li class="nav-item active">-->
-            <!--<a class="nav-link" routerLink="">Ana Sayfa<span class="sr-only">(current)</span></a>-->
-          <!--</li>-->
-          <!--<li class="nav-item">-->
-            <!--<a class="nav-link" routerLink="/hakkimizda">Hakkımızda</a>-->
-          <!--</li>-->
-          <!--<li class="nav-item dropdown">-->
-            <!--<a class="nav-link dropdown-toggle"-->
-               <!--routerLink="/urunlerimiz"-->
-               <!--id="navbarDropdown"-->
-               <!--role="button"-->
-               <!--data-toggle="dropdown"-->
-               <!--aria-haspopup="true"-->
-               <!--aria-expanded="false">-->
-              <!--Ürünlerimiz-->
-            <!--</a>-->
-            <!--<div class="dropdown-menu" aria-labelledby="navbarDropdown">-->
-              <!--<a class="dropdown-item" href="#">Action</a>-->
-              <!--<a class="dropdown-item" href="#">Another action</a>-->
-              <!--<div class="dropdown-divider"></div>-->
-              <!--<a class="dropdown-item" href="#">Something else here</a>-->
-            <!--</div>-->
-          <!--</li>-->
-          <!--<li class="nav-item">-->
-            <!--<a class="nav-link" routerLink="/iletisim">İletişim</a>-->
-          <!--</li>-->
-        <!--</ul>-->
-      <!--</div>-->
-    <!--</nav>-->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" routerLink="">Ana Sayfa<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/hakkimizda">Hakkımızda</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/urunlerimiz">Ürünlerimiz</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/markalar">Markalar</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/iletisim">İletişim</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  <div class="pages-container">
     <router-outlet></router-outlet>
+  </div>
 </div>
 
 

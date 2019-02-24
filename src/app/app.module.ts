@@ -11,6 +11,7 @@ import { HakkimizdaComponent } from './hakkimizda/hakkimizda.component';
 import { UrunlerComponent } from './urunler/urunler.component';
 import { IletisimComponent } from './iletisim/iletisim.component';
 import { UrunlerDetayComponent } from './urunler-detay/urunler-detay.component';
+import { MarkalarComponent } from './markalar/markalar.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { UrunlerDetayComponent } from './urunler-detay/urunler-detay.component';
     HakkimizdaComponent,
     UrunlerComponent,
     IletisimComponent,
-    UrunlerDetayComponent
+    UrunlerDetayComponent,
+    MarkalarComponent
   ],
   imports: [
     BrowserModule,

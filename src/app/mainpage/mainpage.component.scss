@@ -3,25 +3,70 @@
     margin: 0 10%;
     position: absolute;
   .logo-container{
-    padding: 10px 20px 10px 20px;
-    width: 150px;
-    height: 90px;
-    background-color: white;
-    -webkit-border-bottom-right-radius: 20px;
-    -webkit-border-bottom-left-radius: 20px;
-    -moz-border-radius-bottomright: 20px;
-    -moz-border-radius-bottomleft: 20px;
-    border-bottom-right-radius: 20px;
-    border-bottom-left-radius: 20px;
-    a{
-      img{
-        width: 100%;
+    float: left;
+    width: 200px;
+    height: 120px;
+    margin-top:20px;
+    .flip-container {
+      perspective: 1000px;
+      .flipper {
+        transform-style: preserve-3d;
+        position: relative;
+        animation-duration: 3s;
+        animation-name: rotate-flipper;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        .front, .back{
+          width: 200px;
+          height: 120px;
+          padding: 10px 20px;
+          border-radius: 10px;
+          backface-visibility: hidden;
+          position: absolute;
+          top: 0;
+          left: 0;
+          img{
+            width: 100%;
+          }
+        }
+        .front {
+          z-index: 2;
+          transform: rotateY(0deg);
+          background-color: white;
+        }
+        .back {
+          transform: rotateY(180deg);
+          background-color: black;
+        }
+        @keyframes rotate-flipper {
+          from {
+            transform: rotateY(0deg);
+          }
+
+          to {
+            transform: rotateY(180deg);
+          }
+        }
       }
     }
   }
-    .navbar{
-      border-bottom: 1px solid white;
+  .navbar{
+    float: right;
+    width: 60%;
+    border: 2px solid #c78604;
+    margin-top: 86px;
+    border-radius: 10px;
+    .nav-link{
+      padding: 5px 41px;
     }
+  }
+  .pages-container{
+    float: left;
+    width: 100%;
+    height: calc(100vh - 190px);
+    margin-top: 20px;
+    overflow: auto;
+  }
 }
 
 
