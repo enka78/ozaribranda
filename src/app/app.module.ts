@@ -12,6 +12,9 @@ import { UrunlerComponent } from './urunler/urunler.component';
 import { IletisimComponent } from './iletisim/iletisim.component';
 import { UrunlerDetayComponent } from './urunler-detay/urunler-detay.component';
 import { MarkalarComponent } from './markalar/markalar.component';
+import {AngularFontAwesomeModule} from 'angular-font-awesome';
+import { GaleriComponent } from './galeri/galeri.component';
+
 
 @NgModule({
   declarations: [
@@ -23,11 +26,13 @@ import { MarkalarComponent } from './markalar/markalar.component';
     UrunlerComponent,
     IletisimComponent,
     UrunlerDetayComponent,
-    MarkalarComponent
+    MarkalarComponent,
+    GaleriComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AngularFontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

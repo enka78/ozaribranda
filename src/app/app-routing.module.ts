@@ -6,14 +6,16 @@ import {UrunlerComponent} from './urunler/urunler.component';
 import {IletisimComponent} from './iletisim/iletisim.component';
 import {UrunlerDetayComponent} from './urunler-detay/urunler-detay.component';
 import {MarkalarComponent} from './markalar/markalar.component';
+import {GaleriComponent} from './galeri/galeri.component';
 
 
 const routes: Routes = [
    {path: '', component: AnasayfaComponent },
    {path: 'hakkimizda', component: HakkimizdaComponent },
    {path: 'urunlerimiz', component: UrunlerComponent },
-   {path: 'markalar', component: MarkalarComponent },
    {path: 'urunlerimiz/:id', component: UrunlerDetayComponent },
+   {path: 'markalar', component: MarkalarComponent },
+   {path: 'galeri', component: GaleriComponent },
    {path: 'iletisim', component: IletisimComponent}
 ];
 
