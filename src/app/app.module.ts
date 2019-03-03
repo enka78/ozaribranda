@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {AgmCoreModule} from '@agm/core';
+import { AgmSnazzyInfoWindowModule } from '@agm/snazzy-info-window';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -32,7 +34,11 @@ import { GaleriComponent } from './galeri/galeri.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AngularFontAwesomeModule
+    AngularFontAwesomeModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBMdSxcrIiSHicIS2iTS8lFwcIPPCGGhVs'
+    }),
+    AgmSnazzyInfoWindowModule
   ],
   providers: [],
   bootstrap: [AppComponent]
