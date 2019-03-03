@@ -56,10 +56,23 @@
     border: 1px solid #c78604;
     margin-top: 86px;
     border-radius: 10px;
-    .nav-link{
-      padding-top: 5px;
-      padding-bottom: 5px;
+    .navbar-nav{
+      width: 100%;
+      justify-content: space-around;
+      .nav-link{
+        padding-top: 5px;
+        padding-bottom: 5px;
+        color: black;
+        &:hover {
+          color:#c78604;
+          font-weight: 500;
+        }
+      }
+      .active a{
+        color:#c78604;
+      }
     }
+
   }
   .pages-container{
     float: left;

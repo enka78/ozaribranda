@@ -16,7 +16,15 @@
     padding :35px 0px 35px 30px;
     agm-map{
       height: 304px;
+      .si-content {
+        width: 200px;
+        overflow: hidden;
+      }
+      .gm-style img{
+        width: 139px;
+      }
     }
   }
 
 }
+
