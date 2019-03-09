@@ -10,7 +10,8 @@ import {GaleriComponent} from './galeri/galeri.component';
 
 
 const routes: Routes = [
-   {path: '', component: AnasayfaComponent },
+   {path: '', redirectTo: 'anasayfa', pathMatch: 'full'},
+   {path: 'anasayfa', component: AnasayfaComponent },
    {path: 'hakkimizda', component: HakkimizdaComponent },
    {path: 'urunlerimiz', component: UrunlerComponent },
    {path: 'urunlerimiz/:id', component: UrunlerDetayComponent },

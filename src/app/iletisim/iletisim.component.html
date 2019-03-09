@@ -1,4 +1,5 @@
 <div class="contact">
+  <h5>İletişim</h5>
   <div class="contact-form">
     <form>
       <div class="form-row">
@@ -31,12 +32,22 @@
     </form>
   </div>
   <div class="contact-map">
-    <agm-map [zoom]="10" [latitude]="location.lat" [longitude]="location.lng">
+    <agm-map [zoom]="12" [latitude]="location.lat" [longitude]="location.lng">
       <agm-marker [latitude]="location.lat" [longitude]="location.lng">
-        <agm-snazzy-info-window [maxWidth]="200" [closeWhenOthersOpen]="true">
+        <agm-snazzy-info-window [maxWidth]="200" [isOpen]=true>
           <ng-template>
-            <img src="../../assets/img/logo-light.png">
-            Özarı Branda
+            <img src="../../assets/img/logo-light.png" width="135">
+              <strong>Adres :</strong>
+              <p>Vefa Katip Çelebi Cad.</p>
+              <p>Muabbir Sok. No:4</p>
+              <p>34470 Unkapanı / İstanbul</p>
+              <span>Cep:</span>
+              <p>(0532) 372 78 60</p>
+              <span>Tel:</span>
+              <p>(0212) 513 04 07</p>
+              <span>Fax:</span>
+              <p>(0212) 522 45 16</p>
+              <p>(İ.M.Ç. 1 ve 2. Blok Arası Kat Otopark Önü)</p>
           </ng-template>
         </agm-snazzy-info-window>
       </agm-marker>

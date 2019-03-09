@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class IletisimComponent implements OnInit {
 
   constructor() { }
-  location = {lat: 41.000370, lng: 28.862070};
+  location = {lat: 41.0173149, lng: 28.9581623};
 
   ngOnInit() {
 
