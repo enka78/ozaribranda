@@ -1,1 +1,2 @@
-<app-mainpage></app-mainpage>
+<app-mainpage *ngIf="router.url !== '/panel'"></app-mainpage>
+<app-dash-mainpage *ngIf="router.url === '/panel'"></app-dash-mainpage>

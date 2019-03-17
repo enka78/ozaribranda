@@ -16,6 +16,8 @@ import { UrunlerDetayComponent } from './urunler-detay/urunler-detay.component';
 import { MarkalarComponent } from './markalar/markalar.component';
 import {AngularFontAwesomeModule} from 'angular-font-awesome';
 import { GaleriComponent } from './galeri/galeri.component';
+import { LoginComponent } from './dashboard/login/login.component';
+import { DashMainpageComponent } from './dashboard/dash-mainpage/dash-mainpage.component';
 
 
 @NgModule({
@@ -29,7 +31,9 @@ import { GaleriComponent } from './galeri/galeri.component';
     IletisimComponent,
     UrunlerDetayComponent,
     MarkalarComponent,
-    GaleriComponent
+    GaleriComponent,
+    LoginComponent,
+    DashMainpageComponent
   ],
   imports: [
     BrowserModule,

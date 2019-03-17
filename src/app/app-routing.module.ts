@@ -7,6 +7,8 @@ import {IletisimComponent} from './iletisim/iletisim.component';
 import {UrunlerDetayComponent} from './urunler-detay/urunler-detay.component';
 import {MarkalarComponent} from './markalar/markalar.component';
 import {GaleriComponent} from './galeri/galeri.component';
+import { LoginComponent } from './dashboard/login/login.component';
+import {DashMainpageComponent} from './dashboard/dash-mainpage/dash-mainpage.component';
 
 
 const routes: Routes = [
@@ -17,7 +19,17 @@ const routes: Routes = [
    {path: 'urunlerimiz/:id', component: UrunlerDetayComponent },
    {path: 'markalar', component: MarkalarComponent },
    {path: 'galeri', component: GaleriComponent },
-   {path: 'iletisim', component: IletisimComponent}
+   {path: 'iletisim', component: IletisimComponent},
+   {path: 'panel', component: LoginComponent,
+     children: [
+       {
+         path: '',
+         component: DashMainpageComponent,
+         outlet: 'dashboard'
+       }
+     ]
+   }
+
 ];
 
 @NgModule({
