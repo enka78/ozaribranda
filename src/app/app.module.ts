@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {AgmCoreModule} from '@agm/core';
 import { AgmSnazzyInfoWindowModule } from '@agm/snazzy-info-window';
+import { HttpClientModule } from '@angular/common/http';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -42,7 +43,8 @@ import { DashMainpageComponent } from './dashboard/dash-mainpage/dash-mainpage.c
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyBMdSxcrIiSHicIS2iTS8lFwcIPPCGGhVs'
     }),
-    AgmSnazzyInfoWindowModule
+    AgmSnazzyInfoWindowModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
