@@ -2,7 +2,7 @@
 /**
  * Returns the list of policies.
  */
-phpinfo();
+
 require 'database.php';
 
 $sliders = [];
@@ -14,9 +14,9 @@ if($result = mysqli_query($con,$sql))
     while($row = mysqli_fetch_assoc($result))
     {
         $sliders[$i]['id']    = $row['id'];
-        $sliders[$i]['slider_text1'] = $row['slider_text1'];
-        $sliders[$i]['slider_text2'] = $row['slider_text2'];
-        $sliders[$i]['slider_pic'] = $row['slider_pic'];
+        $sliders[$i]['slider_text1'] = $row['sliderText1'];
+        $sliders[$i]['slider_text2'] = $row['sliderText2'];
+        $sliders[$i]['slider_pic'] = $row['sliderimg'];
         $i++;
     }
 
