@@ -31,3 +31,4 @@ if(isset($postdata) && !empty($postdata))
         return http_response_code(422);
     }
 }
+ ?>

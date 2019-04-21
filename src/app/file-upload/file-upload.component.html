@@ -1,0 +1,7 @@
+
+<form [formGroup]="formUpload" (ngSubmit)="onSubmit()">
+
+  <input formControlName="file" type="file" name="file" (change)="onFileChange" />
+  <button type="submit">Yükle</button>
+
+</form>

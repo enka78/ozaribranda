@@ -14,7 +14,7 @@ export class ApiService {
   constructor(private httpClient: HttpClient) { }
 
   readSliders(): Observable<Slider[]> {
-    return this.httpClient.get<Slider[]>(`${this.PHP_API_SERVER}/api/read.php`);
+    return this.httpClient.get<Slider[]>(`${this.PHP_API_SERVER}/api/readSlider.php`);
   }
   readUsers(): Observable<User[]> {
     return this.httpClient.get<User[]>(`${this.PHP_API_SERVER}/api/admin.php`);
@@ -22,9 +22,12 @@ export class ApiService {
   readAbout(): Observable<About[]> {
     return this.httpClient.get<About[]>(`${this.PHP_API_SERVER}/api/readAbout.php`);
   }
+  updateFile(uploadFile: any) {
+    return this.httpClient.post<any>(`${this.PHP_API_SERVER}/api/uploadFile.php`, uploadFile);
+  }
 
   createAbout(about: About): Observable<About> {
-    return this.httpClient.post<About>(`${this.PHP_API_SERVER}/api/create.php`, about);
+    return this.httpClient.post<About>(`${this.PHP_API_SERVER}/api/createAbout.php`, about);
   }
 
   createSlider(slider: Slider): Observable<Slider> {

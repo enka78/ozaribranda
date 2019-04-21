@@ -32,10 +32,10 @@
     <div class="col-md-7">
 
       <ul class="list-group">
-        <li class="list-group-item">
-          <span>Misyon</span>
-          <span>vizyon</span>
-          <span>aktif</span>
+        <li class="list-group-item" *ngFor="let about of abouts">
+          <span>{{about.hakimizdaText}}</span>
+          <span>{{about.misyonText}}</span>
+          <span>{{about.vizyonText}}</span>
           <button class="btn btn-sm btn-primary">Düzenle</button>
           <button class="btn btn-sm btn-info">Sil</button>
         </li>

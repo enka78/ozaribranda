@@ -26,6 +26,7 @@ import { PanelSliderComponent } from './dashboard/panel-slider/panel-slider.comp
 import { PanelUrunlerComponent } from './dashboard/panel-urunler/panel-urunler.component';
 import { PanelGaleriComponent } from './dashboard/panel-galeri/panel-galeri.component';
 import { PanelMarkalarComponent } from './dashboard/panel-markalar/panel-markalar.component';
+import { FileUploadComponent } from './file-upload/file-upload.component';
 
 
 
@@ -46,7 +47,8 @@ import { PanelMarkalarComponent } from './dashboard/panel-markalar/panel-markala
     PanelSliderComponent,
     PanelUrunlerComponent,
     PanelGaleriComponent,
-    PanelMarkalarComponent
+    PanelMarkalarComponent,
+    FileUploadComponent
   ],
     imports: [
         BrowserModule,
