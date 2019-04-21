@@ -9,7 +9,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainpageComponent } from './mainpage/mainpage.component';
 import { SliderComponent } from './slider/slider.component';
-import { AnasayfaComponent } from './anasayfa/anasayfa.component';
 import { HakkimizdaComponent } from './hakkimizda/hakkimizda.component';
 import { UrunlerComponent } from './urunler/urunler.component';
 import { IletisimComponent } from './iletisim/iletisim.component';
@@ -19,6 +18,15 @@ import {AngularFontAwesomeModule} from 'angular-font-awesome';
 import { GaleriComponent } from './galeri/galeri.component';
 import { LoginComponent } from './dashboard/login/login.component';
 import { DashMainpageComponent } from './dashboard/dash-mainpage/dash-mainpage.component';
+import { ReactiveFormsModule, FormsModule} from '@angular/forms';
+import {UserService} from './dashboard/login/user.service';
+import {AuthGuard} from './guards/auth.guard';
+import { PanelAboutComponent } from './dashboard/panel-about/panel-about.component';
+import { PanelSliderComponent } from './dashboard/panel-slider/panel-slider.component';
+import { PanelUrunlerComponent } from './dashboard/panel-urunler/panel-urunler.component';
+import { PanelGaleriComponent } from './dashboard/panel-galeri/panel-galeri.component';
+import { PanelMarkalarComponent } from './dashboard/panel-markalar/panel-markalar.component';
+
 
 
 @NgModule({
@@ -26,7 +34,6 @@ import { DashMainpageComponent } from './dashboard/dash-mainpage/dash-mainpage.c
     AppComponent,
     MainpageComponent,
     SliderComponent,
-    AnasayfaComponent,
     HakkimizdaComponent,
     UrunlerComponent,
     IletisimComponent,
@@ -34,19 +41,26 @@ import { DashMainpageComponent } from './dashboard/dash-mainpage/dash-mainpage.c
     MarkalarComponent,
     GaleriComponent,
     LoginComponent,
-    DashMainpageComponent
+    DashMainpageComponent,
+    PanelAboutComponent,
+    PanelSliderComponent,
+    PanelUrunlerComponent,
+    PanelGaleriComponent,
+    PanelMarkalarComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    AngularFontAwesomeModule,
-    AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyBMdSxcrIiSHicIS2iTS8lFwcIPPCGGhVs'
-    }),
-    AgmSnazzyInfoWindowModule,
-    HttpClientModule
-  ],
-  providers: [],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        AngularFontAwesomeModule,
+        AgmCoreModule.forRoot({
+            apiKey: 'AIzaSyBMdSxcrIiSHicIS2iTS8lFwcIPPCGGhVs'
+        }),
+        AgmSnazzyInfoWindowModule,
+        HttpClientModule,
+        FormsModule,
+        ReactiveFormsModule
+    ],
+  providers: [UserService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

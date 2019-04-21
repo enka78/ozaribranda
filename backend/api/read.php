@@ -6,7 +6,7 @@
 require 'database.php';
 
 $sliders = [];
-$sql = "SELECT id, slider_text1, slider_text2, slider_pic FROM slider";
+$sql = "SELECT * FROM slider ORDER BY sira asc ";
 
 if($result = mysqli_query($con,$sql))
 {
@@ -14,9 +14,11 @@ if($result = mysqli_query($con,$sql))
     while($row = mysqli_fetch_assoc($result))
     {
         $sliders[$i]['id']    = $row['id'];
-        $sliders[$i]['slider_text1'] = $row['sliderText1'];
-        $sliders[$i]['slider_text2'] = $row['sliderText2'];
-        $sliders[$i]['slider_pic'] = $row['sliderimg'];
+        $sliders[$i]['sliderText1'] = $row['sliderText1'];
+        $sliders[$i]['sliderText2'] = $row['sliderText2'];
+        $sliders[$i]['sliderPic'] = $row['sliderimg'];
+        $sliders[$i]['sliderActive'] = $row['active'];
+        $sliders[$i]['sira'] = $row['sira'];
         $i++;
     }
 

@@ -79,6 +79,60 @@
     height: calc(100vh - 190px);
     margin-top: 20px;
     overflow: auto;
+    .anasayfa{
+      background-color: transparent;
+      position: absolute;
+      bottom: 30px;
+      width: 100%;
+      display: flex;
+      justify-content:space-between;
+      .pdf-container{
+        float: left;
+        width: 240px;
+        height: 70px;
+        border-radius: 10px;
+        overflow: hidden;
+        border: 1px solid #c78604;
+        background: url("../../assets/img/oz-back1.png") no-repeat  center center transparent;
+        a{
+          float: left;
+          width: 100%;
+          .pdf-text{
+            float: left;
+            width: 100%;
+            background-color: #00000096;
+            span{
+              float: left;
+              width: 100%;
+              text-align: center;
+              color: #c78604;
+              font-size: 14px;
+            }
+          }
+          .pdf-icon{
+            float: left;
+            width: 100%;
+            height: 51px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            i{
+              color: #c78604;
+            }
+          }
+          &:hover .pdf-icon {
+            background-color: #00000096;
+          }
+        }
+      }
+      .sub-back-img{
+        background: url("../../assets/img/sun-back.png") no-repeat  center center transparent;
+      }
+      .dick-back-img{
+        background: url("../../assets/img/dick-back.png") no-repeat  center center transparent;
+      }
+    }
+
   }
 }
 .footer{

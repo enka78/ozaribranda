@@ -20,28 +20,72 @@
       <div class="collapse navbar-collapse"  id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item" routerLinkActive="active">
-            <a class="nav-link" routerLink="/anasayfa">Ana Sayfa<span class="sr-only">(current)</span></a>
+            <a class="nav-link" routerLink="/main">Ana Sayfa<span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item" routerLinkActive="active">
-            <a class="nav-link" routerLink="/hakkimizda">Hakkımızda</a>
+            <a class="nav-link" routerLink="/main/hakkimizda">Hakkımızda</a>
           </li>
           <li class="nav-item" routerLinkActive="active">
-            <a class="nav-link" routerLink="/urunlerimiz">Ürünlerimiz</a>
+            <a class="nav-link" routerLink="/main/urunlerimiz">Ürünlerimiz</a>
           </li>
           <li class="nav-item" routerLinkActive="active">
-            <a class="nav-link" routerLink="/markalar">Markalar</a>
+            <a class="nav-link" routerLink="/main/markalar">Markalar</a>
           </li>
           <li class="nav-item" routerLinkActive="active">
-            <a class="nav-link" routerLink="/galeri">Galeri</a>
+            <a class="nav-link" routerLink="/main/galeri">Galeri</a>
           </li>
           <li class="nav-item" routerLinkActive="active">
-            <a class="nav-link" routerLink="/iletisim">İletişim</a>
+            <a class="nav-link" routerLink="/main/iletisim">İletişim</a>
           </li>
         </ul>
       </div>
     </nav>
   <div class="pages-container">
     <router-outlet></router-outlet>
+    <div class="anasayfa" *ngIf="routeIsActive('/main')">
+      <div class="pdf-container">
+        <a href="../../assets/pdf/ekatalog.pdf"
+           target="_blank"
+           data-toggle="tooltip"
+           data-placement="top"
+           title="Özarı Branda Kataloğu">
+          <div class="pdf-text">
+            <span>Özarı Branda Ürün Kataloğu</span>
+          </div>
+          <div class="pdf-icon">
+            <i class="fa fa-file-pdf-o fa-2x" aria-hidden="true"></i>
+          </div>
+        </a>
+      </div>
+      <div class="pdf-container dick-back-img">
+        <a href="../../assets/pdf/DicksonKatalog.pdf"
+           target="_blank"
+           data-toggle="tooltip"
+           data-placement="top"
+           title="Dickson Ürün Kataloğu">
+          <div class="pdf-text">
+            <span>Dickson Ürün Kataloğu</span>
+          </div>
+          <div class="pdf-icon">
+            <i class="fa fa-file-pdf-o fa-2x" aria-hidden="true"></i>
+          </div>
+        </a>
+      </div>
+      <div class="pdf-container sub-back-img">
+        <a href="../../assets/pdf/SUNBRELLA.pdf"
+           target="_blank"
+           data-toggle="tooltip"
+           data-placement="top"
+           title="Sunbrella Ürün Kataloğu">
+          <div class="pdf-text">
+            <span>Sunbrella Ürün Kataloğu</span>
+          </div>
+          <div class="pdf-icon">
+            <i class="fa fa-file-pdf-o fa-2x" aria-hidden="true"></i>
+          </div>
+        </a>
+      </div>
+    </div>
   </div>
 </div>
 <div class="footer">

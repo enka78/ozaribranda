@@ -1,2 +1,39 @@
+<div id="logincontainer">
+    <router-outlet></router-outlet>
+    <div class="container" *ngIf="!isLogin">
+        <div class="row">
+            <h3>Yönetim Paneli <span>V0.1</span></h3>
+            <div class="alert alert-danger" role="alert" *ngIf="alertShow">
+                Yanlış kullanıcı adı yada şifre girdiniz. Tekrar deneyin...
+            </div>
+        </div>
+        <div class="row">
+            <div class="modal d-block" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Kullanıcı Girişi</h5>
+                        </div>
+                        <form  [formGroup]="userForm" (ngSubmit)="onSubmit()">
+                            <div class="modal-body">
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Kullanıcı Adı</label>
+                                        <input  formControlName="user" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="kullanıcı adı">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputPassword1">Şifre</label>
+                                        <input type="text" formControlName="sifre" type="password" class="form-control" id="exampleInputPassword1" placeholder="Şifre">
+                                    </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" [disabled]="!userForm.valid" class="btn btn-primary">Giriş</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-<h1>login</h1>
+

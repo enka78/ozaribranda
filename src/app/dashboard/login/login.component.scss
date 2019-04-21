@@ -1,0 +1,19 @@
+#logincontainer{
+  .container{
+    .row{
+      margin: 20px 0;
+      justify-content: center;
+      h3{
+        width: 100%;
+        margin: 20px 0;
+        text-align: center;
+        span{
+          font-size: 10px;
+        }
+      }
+      .modal{
+        position: relative;
+      }
+    }
+  }
+}

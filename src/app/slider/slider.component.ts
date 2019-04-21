@@ -11,13 +11,11 @@ import {Slider} from '../models/slider';
 export class SliderComponent implements OnInit {
 
   sliders: Slider[];
-  // selectedPolicy:  Slider  = { id :  null , number:null, amount:  null};
   constructor(private router: Router, private apiService: ApiService) { }
 
   ngOnInit() {
     this.apiService.readSliders().subscribe((sliders: Slider[]) => {
       this.sliders = sliders;
-      console.log(this.sliders);
     });
   }
 

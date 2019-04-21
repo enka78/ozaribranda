@@ -3,6 +3,6 @@ export  class  Slider {
     sliderText1: string;
     sliderText2: string;
     sliderPic: string;
-    sliderActive: boolean;
+    sliderActive: number;
     sira: number;
 }
