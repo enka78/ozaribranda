@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ApiService} from '../services/api.service';
-import { FormControl, FormGroup} from '@angular/forms';
+import { FormBuilder, FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-file-upload',
@@ -9,33 +9,36 @@ import { FormControl, FormGroup} from '@angular/forms';
 })
 export class FileUploadComponent implements OnInit {
 
-  formUpload = new FormGroup({
-    file: new FormControl('')
-  });
-  error: string;
-  uploadResponse = { status: '', message: '', filePath: '' };
+  form: FormGroup;
+  uploadResponse: any;
 
-  constructor(private apiService: ApiService) { }
+  constructor(private formBuilder: FormBuilder, private apiService: ApiService) { }
 
   ngOnInit() {
-   this.formUpload.value = [];
+    this.form = this.formBuilder.group({
+      uploadFile: ['']
+    });
   }
 
-  onFileChange() {
-    console.log(this.formUpload.value);
-    if (this.formUpload.value.length > 0) {
-      const file = this.formUpload.value[0];
-      this.formUpload.value = file;
+  onFileSelect(event) {
+    if (event.target.files.length > 0) {
+      const file = event.target.files[0];
+      this.form.get('uploadFile').setValue(file);
     }
   }
 
   onSubmit() {
     const formData = new FormData();
-    formData.append('file', this.formUpload.value);
+    formData.append('uploadFile', this.form.get('uploadFile').value);
 
     this.apiService.updateFile(formData).subscribe(
-        (res) => this.uploadResponse = res,
-        (err) => this.error = err
+      (res: any) => {
+        this.uploadResponse = res;
+        console.log(res);
+      },
+      (err) => {
+        console.log(err);
+      }
     );
   }
 }

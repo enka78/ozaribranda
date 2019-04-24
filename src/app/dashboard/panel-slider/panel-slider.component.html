@@ -1,6 +1,8 @@
-<div class="container">
-  <div class="row">
+<div class="container-fluid">
+  <div class="row m-5">
     <div class="col-md-5">
+      <h3>Yeni Kayıt</h3>
+      <hr>
       <form [formGroup]="sliderForm" (ngSubmit)="onSubmit()">
         <div class="form-group">
           <label for="exampleFormControlInput1">Slider Üst Metin</label>
@@ -25,19 +27,24 @@
           <label for="exampleFormControlTextarea4">Sira</label>
           <input formControlName="sira" class="form-control" id="exampleFormControlTextarea4"/>
         </div>
-        <button type="submit" class="btn btn-primary mb-2">Kaydet</button>
+        <button type="submit" class="btn btn-primary btn-block mb-2">Kaydet</button>
       </form>
 
     </div>
     <div class="col-md-7">
-
+      <h3>Mevcut Kayıtlar</h3>
+      <hr>
       <ul class="list-group">
-        <li class="list-group-item" *ngFor="let slider of sliders">
-          <span>{{slider}}</span>
-          <span>{{slider}}</span>
-          <span>{{slider}}</span>
-          <button class="btn btn-sm btn-primary">Düzenle</button>
-          <button class="btn btn-sm btn-info">Sil</button>
+        <li class="list-group-item d-flex justify-content-between" *ngFor="let slider of sliders">
+          <div>
+            <span>{{slider}}</span>
+            <span>{{slider}}</span>
+            <span>{{slider}}</span>
+          </div>
+          <div>
+            <button class="btn btn-sm btn-primary mx-1">Düzenle</button>
+            <button class="btn btn-sm btn-info mx-1">Sil</button>
+          </div>
         </li>
       </ul>
     </div>

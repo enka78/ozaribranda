@@ -1,7 +1,15 @@
+<div>
+  <div *ngIf="uploadResponse && uploadResponse.status === 'error'">
 
-<form [formGroup]="formUpload" (ngSubmit)="onSubmit()">
+  </div>
+  <div *ngIf="uploadResponse && uploadResponse.status === 'success'">
+    <img [src]='uploadResponse.url' />
+  </div>
 
-  <input formControlName="file" type="file" name="file" (change)="onFileChange" />
-  <button type="submit">Yükle</button>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
 
-</form>
+    <input type="file" name="uploadFile"  (change)="onFileSelect($event)" />
+    <button type="submit">Upload</button>
+
+  </form>
+</div>

@@ -1,7 +1,9 @@
-<div class="container">
-  <div class="row">
+<div class="container-fluid">
+  <div class="row m-5">
     <div class="col-md-5">
       <form [formGroup]="aboutForm" (ngSubmit)="onSubmit()">
+        <h3>Yeni Kayıt</h3>
+        <hr>
         <div class="form-group">
           <label for="exampleFormControlTextarea1">Hakkımızda</label>
           <textarea formControlName="hakimizda" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
@@ -25,19 +27,24 @@
           <label for="exampleFormControlTextarea4">Sira</label>
           <input formControlName="sira" class="form-control" id="exampleFormControlTextarea4"/>
         </div>
-        <button type="submit" class="btn btn-primary mb-2">Kaydet</button>
+        <button type="submit" class="btn btn-primary btn-block mb-2">Kaydet</button>
       </form>
 
     </div>
     <div class="col-md-7">
-
-      <ul class="list-group">
-        <li class="list-group-item" *ngFor="let about of abouts">
-          <span>{{about.hakimizdaText}}</span>
-          <span>{{about.misyonText}}</span>
-          <span>{{about.vizyonText}}</span>
-          <button class="btn btn-sm btn-primary">Düzenle</button>
-          <button class="btn btn-sm btn-info">Sil</button>
+      <h3>Mevcut Kayıtlar</h3>
+      <hr>
+      <ul class="list-group mt-5">
+        <li class="list-group-item d-flex justify-content-between" *ngFor="let about of abouts">
+          <div>
+            <span>{{about.hakimizdaText}}</span>
+            <span>{{about.misyonText}}</span>
+            <span>{{about.vizyonText}}</span>
+          </div>
+          <div>
+            <button class="btn btn-sm btn-primary mx-1">Düzenle</button>
+            <button class="btn btn-sm btn-info mx-1">Sil</button>
+          </div>
         </li>
       </ul>
     </div>
