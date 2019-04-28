@@ -9,6 +9,7 @@ import {Router} from '@angular/router';
 })
 export class MainpageComponent implements OnInit {
 
+  lightStatus: boolean = true;
   constructor(private router: Router) { }
 
   ngOnInit() {
@@ -16,5 +17,9 @@ export class MainpageComponent implements OnInit {
 
   routeIsActive(routePath: string) {
     return this.router.url === routePath;
+  }
+
+  lightChange() {
+    this.lightStatus = !this.lightStatus;
   }
 }

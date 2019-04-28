@@ -5,10 +5,10 @@ require 'database.php';
 $response = array();
 $upload_dir = 'uploads/';
 $server_url = 'http://localhost:4200';
-if($_FILES["uploadFile"])
+if($_FILES["uploadFile"]["name"])
 {
-	//$avatar_name = explode(".", $_FILES["file"]["name"]);
-	$avatar_name = $_FILES["file"]["name"];
+
+	$avatar_name = $_FILES["uploadFile"]["name"];
 	$avatar_tmp_name = $_FILES["uploadFile"]["tmp_name"];
 	$error = $_FILES["uploadFile"]["error"];
 	

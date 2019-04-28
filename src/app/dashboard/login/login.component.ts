@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
         this.userservice.setUserLoggedIn();
         this.isLogin = this.userservice.getUserLoggedIn();
         this.alertShow = false;
-        this.router.navigate(['/admin/panel']);
+        this.router.navigate(['/admin/panel/hakkimizda']);
       } else {
           this.isLogin = this.userservice.getUserLoggedIn();
           this.alertShow = true;

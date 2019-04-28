@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
+import {Slider} from '../../models/slider';
+
 
 @Component({
   selector: 'app-panel-slider',
@@ -15,10 +17,14 @@ export class PanelSliderComponent implements OnInit {
     sira: new FormControl(''),
   });
 
-
+  sliders: Slider[];
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onSubmit() {
+
   }
 
 }
