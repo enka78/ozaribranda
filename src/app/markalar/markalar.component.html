@@ -1,26 +1,8 @@
 <div class="marka">
   <h5>Markalar</h5>
   <div class="markaContainer">
-    <div class="markaBox">
-        <img src="../../assets/img/logo_sunbrella.jpg" alt="sunberella"/>
-    </div>
-    <div class="markaBox">
-        <img src="../../assets/img/logo_Dickson.png" alt="sunberella"/>
-    </div>
-    <div class="markaBox">
-        <img src="../../assets/img/logo_sunbrella.jpg" alt="sunberella"/>
-    </div>
-    <div class="markaBox">
-        <img src="../../assets/img/logo_sunbrella.jpg" alt="sunberella"/>
-    </div>
-    <div class="markaBox">
-        <img src="../../assets/img/logo_sunbrella.jpg" alt="sunberella"/>
-    </div>
-    <div class="markaBox">
-        <img src="../../assets/img/logo_sunbrella.jpg" alt="sunberella"/>
-    </div>
-    <div class="markaBox">
-        <img src="../../assets/img/logo_sunbrella.jpg" alt="sunberella"/>
+    <div class="markaBox" *ngFor="let mar of markalar">
+        <img src="../../assets/img/{{mar.markaPic}}" alt="{{mar.markaText}}"/>
     </div>
   </div>
 </div>

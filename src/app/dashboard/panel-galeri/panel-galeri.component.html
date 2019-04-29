@@ -1,3 +1,47 @@
-<p>
-  panel-galeri works!
-</p>
+<div class="container-fluid">
+  <div class="row m-3">
+    <h2 class="">Galeri</h2>
+  </div>
+  <div class="row m-5">
+    <div class="col-md-5">
+      <h3>Yeni Kayıt</h3>
+      <hr>
+      <form [formGroup]="galeriForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label>Galeri Resim</label>
+          <app-file-upload formControlName="galeriPic"></app-file-upload>
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlSelect1">Aktif / Pasif</label>
+          <select formControlName="active" class="form-control" id="exampleFormControlSelect1">
+            <option value="1">Aktif</option>
+            <option value="0">Pasif</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlTextarea4">Sira</label>
+          <input formControlName="sira" class="form-control" id="exampleFormControlTextarea4"/>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block mb-2">Kaydet</button>
+      </form>
+
+    </div>
+    <div class="col-md-7">
+      <h3>Mevcut Kayıtlar</h3>
+      <hr>
+      <ul class="list-group">
+        <li class="list-group-item d-flex justify-content-between" *ngFor="let gal of galeri">
+          <div>
+            <span>{{gal.galeriPic}}</span>
+            <span>{{gal.active}}</span>
+            <span>{{gal.sira}}</span>
+          </div>
+          <div>
+            <button class="btn btn-sm btn-primary mx-1">Düzenle</button>
+            <button class="btn btn-sm btn-info mx-1">Sil</button>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

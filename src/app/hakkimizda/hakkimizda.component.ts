@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {ApiService} from '../services/api.service';
+import {About} from '../models/about';
 
 @Component({
   selector: 'app-hakkimizda',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HakkimizdaComponent implements OnInit {
 
-  constructor() { }
+  hakimizdaList: About[];
+  constructor(private apiService: ApiService) { }
 
   ngOnInit() {
+    this.apiService.readAbout().subscribe((hakimizda: About[]) => {
+      this.hakimizdaList = hakimizda;
+    });
   }
-
 }

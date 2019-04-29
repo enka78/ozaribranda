@@ -17,28 +17,26 @@ if(isset($postdata) && !empty($postdata))
     }*/
 
     // Sanitize.
-    $hakimizda = mysqli_real_escape_string($con, $request->hakimizda);
-    $vizyonumuz = mysqli_real_escape_string($con, $request->vizyonumuz);
-    $misyonumuz = mysqli_real_escape_string($con, $request->misyonumuz);
-    $aktif = mysqli_real_escape_string($con, $request->aktif);
+    $markaText = mysqli_real_escape_string($con, $request->markaText);
+    $markaPic = mysqli_real_escape_string($con, $request->markaPic);
+    $active = mysqli_real_escape_string($con, $request->active);
     $sira = mysqli_real_escape_string($con, $request->sira);
 
 
     // Create.
-    $sql = "INSERT INTO `about`(`id`,`hakimizdaText`,`misyonText`, `vizyonText`, `active`, `sira`) VALUES (null,'{$hakimizda}','{$vizyonumuz}','{$misyonumuz}','{$aktif}', '{$sira}')";
+    $sql = "INSERT INTO `markalar`(`id`,`markaText`,`markaPic`, `active`, `sira`) VALUES (null,'{$markaText}','{$markaPic}','{$active}', '{$sira}')";
 
     if(mysqli_query($con,$sql))
     {
         http_response_code(201);
-        $about = [
-            'hakimizda' => $hakimizda,
-            'vizyonumuz' => $vizyonumuz,
-            'misyonumuz' => $misyonumuz,
-            'aktif' => $aktif,
+        $markalar = [
+            'markaText' => $markaText,
+            'markaPic' => $markaPic,
+            'active' => $active,
             'sira' => $sira,
             'id'    => mysqli_insert_id($con)
         ];
-        echo json_encode($about);
+        echo json_encode($markalar);
     }
     else
     {

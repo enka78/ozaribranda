@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
 import {Slider} from '../../models/slider';
+import {ApiService} from '../../services/api.service';
 
 
 @Component({
@@ -18,13 +19,17 @@ export class PanelSliderComponent implements OnInit {
   });
 
   sliders: Slider[];
-  constructor() { }
+  constructor(private apiservice: ApiService) { }
 
   ngOnInit() {
+    this.apiservice.readSliders().subscribe((sliders: Slider[]) => {
+      this.sliders = sliders;
+    });
   }
-
   onSubmit() {
-
+    this.apiservice.createSlider(this.sliderForm.value).subscribe(() => {
+      console.log('başarılı kayıt');
+    });
   }
 
 }

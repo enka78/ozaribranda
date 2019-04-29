@@ -17,7 +17,7 @@ if($result = mysqli_query($con,$sql))
         $about[$i]['hakimizdaText'] = $row['hakimizdaText'];
         $about[$i]['misyonText'] = $row['misyonText'];
         $about[$i]['vizyonText'] = $row['vizyonText'];
-        $about[$i]['aktif'] = $row['active'];
+        $about[$i]['active'] = $row['active'];
         $about[$i]['sira'] = $row['sira'];
         $i++;
     }

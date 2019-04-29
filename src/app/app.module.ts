@@ -27,6 +27,7 @@ import { PanelUrunlerComponent } from './dashboard/panel-urunler/panel-urunler.c
 import { PanelGaleriComponent } from './dashboard/panel-galeri/panel-galeri.component';
 import { PanelMarkalarComponent } from './dashboard/panel-markalar/panel-markalar.component';
 import { FileUploadComponent } from './file-upload/file-upload.component';
+import { ActivePipe } from './active.pipe';
 
 
 
@@ -48,7 +49,8 @@ import { FileUploadComponent } from './file-upload/file-upload.component';
     PanelUrunlerComponent,
     PanelGaleriComponent,
     PanelMarkalarComponent,
-    FileUploadComponent
+    FileUploadComponent,
+    ActivePipe
   ],
     imports: [
         BrowserModule,

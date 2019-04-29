@@ -14,6 +14,7 @@ import {PanelAboutComponent} from './dashboard/panel-about/panel-about.component
 import {PanelSliderComponent} from './dashboard/panel-slider/panel-slider.component';
 import {PanelGaleriComponent} from './dashboard/panel-galeri/panel-galeri.component';
 import {PanelMarkalarComponent} from './dashboard/panel-markalar/panel-markalar.component';
+import {PanelUrunlerComponent} from './dashboard/panel-urunler/panel-urunler.component';
 
 
 
@@ -39,6 +40,7 @@ const routes: Routes = [
                {path: 'slider', component: PanelSliderComponent },
                {path: 'galeri', component: PanelGaleriComponent },
                {path: 'markalar', component: PanelMarkalarComponent },
+               {path: 'urunler', component: PanelUrunlerComponent },
                 ]
        }
      ]

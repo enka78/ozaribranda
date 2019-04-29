@@ -1,13 +1,8 @@
-<div class="aboutUs">
+<div class="aboutUs" *ngFor="let about of hakimizdaList | active | slice:0:1">
  <h5>Hakkımızda</h5>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, beatae, eius enim et eum eveniet harum inventore ipsum nam omnis qui quia quidem quisquam quos sapiente sint tempore veritatis vero?
-  </p>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias atque consequatur culpa cupiditate deserunt doloremque eaque, eos molestiae repudiandae. A aperiam corporis cum exercitationem fuga ipsum libero minima obcaecati voluptas.
-  </p>
+  <p>{{about.hakimizdaText}}</p>
   <h5>Misyonumuz</h5>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias atque consequatur culpa cupiditate deserunt doloremque eaque, eos molestiae repudiandae. A aperiam corporis cum exercitationem fuga ipsum libero minima obcaecati voluptas.
-  </p>
+  <p>{{about.misyonText}}</p>
   <h5>Vizyonumuz</h5>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias atque consequatur culpa cupiditate deserunt doloremque eaque, eos molestiae repudiandae. A aperiam corporis cum exercitationem fuga ipsum libero minima obcaecati voluptas.
-  </p>
+  <p>{{about.vizyonText}}</p>
 </div>

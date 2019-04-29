@@ -1,3 +1,71 @@
-<p>
-  panel-urunler works!
-</p>
+<div class="container-fluid">
+  <div class="row m-3">
+    <h2 class="">Ürünler</h2>
+  </div>
+  <div class="row m-5">
+    <div class="col-md-5">
+      <h3>Yeni Kayıt</h3>
+      <hr>
+      <form [formGroup]="urunlerForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="exampleFormControlSelect1">Ürün Kategori</label>
+          <select formControlName="katid" class="form-control" id="exampleFormControlSelect1">
+            <option value="{{kat.id}}" *ngFor="let kat of kategoriler">{{kat.kategoriAdi}}</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlInput1">Ürün Adı</label>
+          <input formControlName="urunAdi"  class="form-control" id="exampleFormControlInput1"/>
+        </div>
+        <div class="form-group">
+          <label>Ürün Resim</label>
+          <app-file-upload formControlName="urunPic1" ></app-file-upload>
+        </div>
+        <div class="form-group">
+          <label>Ürün Resim</label>
+          <app-file-upload formControlName="urunPic2" ></app-file-upload>
+        </div>
+        <div class="form-group">
+          <label>Ürün Resim</label>
+          <app-file-upload formControlName="urunPic3" ></app-file-upload>
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlTextarea3">Ürün Detay</label>
+          <textarea formControlName="urunDetay" class="form-control" id="exampleFormControlTextarea3" rows="3"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlSelect2">Aktif / Pasif</label>
+          <select formControlName="active" class="form-control" id="exampleFormControlSelect2">
+            <option value="1">Aktif</option>
+            <option value="0">Pasif</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlTextarea4">Sira</label>
+          <input formControlName="sira" class="form-control" id="exampleFormControlTextarea4"/>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block mb-2">Kaydet</button>
+      </form>
+
+    </div>
+    <div class="col-md-7">
+      <h3>Mevcut Kayıtlar</h3>
+      <hr>
+      <ul class="list-group">
+        <li class="list-group-item d-flex justify-content-between" *ngFor="let urun of urunler">
+          <div>
+            <span>{{urun.urunAdi}}</span>
+            <span>{{urun.urunDetay}}</span>
+            <span>{{urun.urunPic1}}</span>
+            <span>{{urun.urunPic2}}</span>
+          </div>
+          <div>
+            <button class="btn btn-sm btn-primary mx-1">Düzenle</button>
+            <button class="btn btn-sm btn-info mx-1">Sil</button>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
