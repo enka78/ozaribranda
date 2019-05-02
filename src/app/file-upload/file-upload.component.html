@@ -1,9 +1,8 @@
 <div>
   <div *ngIf="uploadResponse && uploadResponse.status === 'error'">
-
   </div>
   <div *ngIf="uploadResponse && uploadResponse.status === 'success'">
-    <img [src]='uploadResponse.url' />
+    <img  [src]='uploadResponse.url' />
   </div>
 
   <form [formGroup]="form" (ngSubmit)="onSubmit()">

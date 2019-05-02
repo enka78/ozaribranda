@@ -28,6 +28,7 @@ import { PanelGaleriComponent } from './dashboard/panel-galeri/panel-galeri.comp
 import { PanelMarkalarComponent } from './dashboard/panel-markalar/panel-markalar.component';
 import { FileUploadComponent } from './file-upload/file-upload.component';
 import { ActivePipe } from './active.pipe';
+import { GroupByPipe } from './group-by.pipe';
 
 
 
@@ -50,7 +51,8 @@ import { ActivePipe } from './active.pipe';
     PanelGaleriComponent,
     PanelMarkalarComponent,
     FileUploadComponent,
-    ActivePipe
+    ActivePipe,
+    GroupByPipe
   ],
     imports: [
         BrowserModule,

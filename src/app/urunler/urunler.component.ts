@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {ApiService} from '../services/api.service';
+import {Kategori} from '../models/kategori';
+import {Urun} from '../models/urun';
 
 @Component({
   selector: 'app-urunler',
@@ -7,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UrunlerComponent implements OnInit {
 
-  constructor() { }
+  kategoriler: Kategori[];
+  urunler: Urun[];
+  constructor( private apiService: ApiService) { }
 
   ngOnInit() {
-  }
+    this.apiService.readKategori().subscribe((kategori: Kategori[]) => {
+      this.kategoriler = kategori;
+    });
 
+    this.apiService.readUrunler().subscribe((urun: Urun[]) => {
+      this.urunler = urun;
+    });
+  }
 }

@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild} from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
 import {Slider} from '../../models/slider';
 import {ApiService} from '../../services/api.service';
+import {FileUploadComponent} from '../../file-upload/file-upload.component';
+
 
 
 @Component({
@@ -10,11 +12,13 @@ import {ApiService} from '../../services/api.service';
   styleUrls: ['./panel-slider.component.scss']
 })
 export class PanelSliderComponent implements OnInit {
+ @ViewChild(FileUploadComponent) uploadData: FileUploadComponent;
+
   sliderForm = new FormGroup({
     sliderText1: new FormControl(''),
     sliderText2: new FormControl(''),
-    sliderPic: new FormControl(''),
-    sliderActive: new FormControl(''),
+    sliderimg: new FormControl(''),
+    active: new FormControl(''),
     sira: new FormControl(''),
   });
 
@@ -26,9 +30,12 @@ export class PanelSliderComponent implements OnInit {
       this.sliders = sliders;
     });
   }
+
   onSubmit() {
+    this.sliderForm.value.sliderimg = this.uploadData.uploadResponse.url;
     this.apiservice.createSlider(this.sliderForm.value).subscribe(() => {
-      console.log('başarılı kayıt');
+        console.log('başarılı kayıt');
+        console.log(this.sliderForm.value);
     });
   }
 
