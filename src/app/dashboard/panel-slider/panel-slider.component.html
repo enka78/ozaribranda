@@ -30,7 +30,8 @@
           <label for="exampleFormControlTextarea4">Sira</label>
           <input formControlName="sira" class="form-control" id="exampleFormControlTextarea4"/>
         </div>
-        <button type="submit" class="btn btn-primary btn-block mb-2">Kaydet</button>
+        <button type="submit" *ngIf="this.selectedSlider.id==null" class="btn btn-primary btn-block mb-2">Kaydet</button>
+        <button type="submit" *ngIf="this.selectedSlider.id!=null" class="btn btn-primary btn-block mb-2">Güncelle</button>
       </form>
 
     </div>
@@ -38,15 +39,32 @@
       <h3>Mevcut Kayıtlar</h3>
       <hr>
       <ul class="list-group">
-        <li class="list-group-item d-flex justify-content-between" *ngFor="let slider of sliders">
+        <li class="list-group-item d-flex justify-content-between" [ngClass]="{'active': this.selectedSlider.id == slider.id}" *ngFor="let slider of sliders">
           <div>
-            <span>{{slider}}</span>
-            <span>{{slider}}</span>
-            <span>{{slider}}</span>
+            <div class="row">
+              <div class="col-md-3">
+                <label>Slider Resim</label>
+                <img src="{{slider.sliderimg}}"/>
+              </div>
+              <div class="col-md-9">
+                <div class="row">
+                  <label>Slider Üst Metin</label>
+                  <span>{{slider.sliderText1}}</span>
+                </div>
+                <div class="row">
+                  <label>Slider Alt Metin</label>
+                  <span>{{slider.sliderText2}}</span>
+                </div>
+                <div class="row">
+                  <span>{{slider.active}}</span>
+                  <span>{{slider.sira}}</span>
+                </div>
+              </div>
+            </div>
           </div>
           <div>
-            <button class="btn btn-sm btn-primary mx-1">Düzenle</button>
-            <button class="btn btn-sm btn-info mx-1">Sil</button>
+            <button class="btn btn-sm btn-info mx-1" (click)="selected(slider)">Düzenle</button>
+            <button class="btn btn-sm btn-danger mx-1" (click)="delete(slider.id)">Sil</button>
           </div>
         </li>
       </ul>

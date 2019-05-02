@@ -57,19 +57,19 @@ export class ApiService {
 
   /*---------------------    update         --------------*/
   updateSlider(slider: Slider) {
-    return this.httpClient.put<Slider>(`${this.PHP_API_SERVER}/api/updateSlider.php`, slider);
+    return this.httpClient.put<Slider>(`${this.PHP_API_SERVER}/api/updataSlider.php`, slider);
   }
   updateAbout(about: About) {
-    return this.httpClient.put<About>(`${this.PHP_API_SERVER}/api/updateAbout.php`, about);
+    return this.httpClient.put<About>(`${this.PHP_API_SERVER}/api/updataAbout.php`, about);
   }
   updateGaleri(galeri: Galeri) {
-    return this.httpClient.put<Galeri>(`${this.PHP_API_SERVER}/api/updateGaleri.php`, galeri);
+    return this.httpClient.put<Galeri>(`${this.PHP_API_SERVER}/api/updataGaleri.php`, galeri);
   }
   updateMarkalar(marka: Marka) {
-    return this.httpClient.put<Marka>(`${this.PHP_API_SERVER}/api/updateMarkalar.php`, marka);
+    return this.httpClient.put<Marka>(`${this.PHP_API_SERVER}/api/updataMarkalar.php`, marka);
   }
   updateUrunler(urun: Urun) {
-    return this.httpClient.put<Urun>(`${this.PHP_API_SERVER}/api/updateUrunler.php`, urun);
+    return this.httpClient.put<Urun>(`${this.PHP_API_SERVER}/api/updataUrunler.php`, urun);
   }
 
   /*---------------------    delete          --------------*/
@@ -90,7 +90,7 @@ export class ApiService {
   }
 
   /*---------------------    upload file         --------------*/
-  updateFile(uploadFile: any) {
+  uploadFile(uploadFile: any) {
     return this.httpClient.post<any>(`${this.PHP_API_SERVER}/api/uploadFile.php`, uploadFile);
   }
 }

@@ -21,7 +21,7 @@ if($_FILES["uploadFile"]["name"])
     }else 
     {
         $random_name = rand(1000,1000000)."-". $avatar_name;
-        $upload_name = $upload_dir.strtolower($avatar_name);
+        $upload_name = $upload_dir.mb_strtolower($random_name, 'UTF-8');
         $upload_name = preg_replace('/\s+/', '-', $upload_name);
 		
     
