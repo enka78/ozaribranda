@@ -1,10 +1,8 @@
 import {Component, OnInit, ViewChild, } from '@angular/core';
-import {FormControl, FormGroup} from '@angular/forms';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {Slider} from '../../models/slider';
 import {ApiService} from '../../services/api.service';
-import {FileUploadComponent} from '../../file-upload/file-upload.component';
-import {takeUntil} from 'rxjs/operators';
-
+import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
@@ -13,22 +11,26 @@ import {takeUntil} from 'rxjs/operators';
   styleUrls: ['./panel-slider.component.scss']
 })
 export class PanelSliderComponent implements OnInit {
- @ViewChild(FileUploadComponent) uploadData: FileUploadComponent;
   sliderForm = new FormGroup({
-    id: new FormControl(''),
-    sliderText1: new FormControl(''),
-    sliderText2: new FormControl(''),
-    sliderimg: new FormControl(''),
-    active: new FormControl(''),
-    sira: new FormControl(''),
+    id: new FormControl(null),
+    sliderText1: new FormControl('', Validators.required),
+    sliderText2: new FormControl('', Validators.required),
+    sliderimg: new FormControl('', Validators.required),
+    active: new FormControl(null, Validators.required),
+    sira: new FormControl(null, Validators.required),
   });
 
   sliders: Slider[];
   selectedSlider:  Slider  = { id :  null , sliderText1: '' , sliderText2: '', sliderimg: '' , active : null, sira : null };
-  constructor(private apiservice: ApiService) { }
+
+  constructor(private apiservice: ApiService, private toastr: ToastrService) { }
 
   ngOnInit() {
     this.getSliders();
+  }
+
+  public getFileUrl(url): void {
+    this.sliderForm.controls['sliderimg'].setValue(url);
   }
 
   getSliders() {
@@ -43,14 +45,15 @@ export class PanelSliderComponent implements OnInit {
         this.getSliders();
         this.emptySelected();
         this.sliderForm.reset();
-        console.log('slider updated');
+        this.toastr.success('Başarıyla Güncellendi');
       });
     } else {
-      this.sliderForm.value.sliderimg = this.uploadData.uploadResponse.url;
       this.apiservice.createSlider(this.sliderForm.value).subscribe(() => {
         this.getSliders();
         this.emptySelected();
-        console.log('başarılı kayıt');
+        this.toastr.success('Kayıt Başarıyla Gerçekleşti');
+      }, (err) => {
+        this.toastr.success('Kayıt Başarısız');
       });
     }
   }
@@ -67,7 +70,7 @@ export class PanelSliderComponent implements OnInit {
     this.apiservice.deleteSlider(id).subscribe((slider: Slider) => {
       this.getSliders();
       this.emptySelected();
-      console.log('slider deleted');
+      this.toastr.success('Kayıt Başarıyla Silindi');
     });
   }
 

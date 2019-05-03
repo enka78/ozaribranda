@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {ApiService} from '../services/api.service';
 import { FormBuilder, FormGroup} from '@angular/forms';
 
@@ -8,6 +8,7 @@ import { FormBuilder, FormGroup} from '@angular/forms';
   styleUrls: ['./file-upload.component.scss']
 })
 export class FileUploadComponent implements OnInit {
+  @Output() public fileUrl = new EventEmitter();
 
   form: FormGroup;
   uploadResponse: any;
@@ -34,6 +35,7 @@ export class FileUploadComponent implements OnInit {
     this.apiService.uploadFile(formData).subscribe(
       (res: any) => {
         this.uploadResponse = res;
+        this.fileUrl.emit(res.url);
         console.log(res);
       },
       (err) => {

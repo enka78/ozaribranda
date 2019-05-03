@@ -29,6 +29,8 @@ import { PanelMarkalarComponent } from './dashboard/panel-markalar/panel-markala
 import { FileUploadComponent } from './file-upload/file-upload.component';
 import { ActivePipe } from './active.pipe';
 import { GroupByPipe } from './group-by.pipe';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -64,7 +66,9 @@ import { GroupByPipe } from './group-by.pipe';
         AgmSnazzyInfoWindowModule,
         HttpClientModule,
         FormsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        ToastrModule.forRoot(),
+        BrowserAnimationsModule
     ],
   providers: [UserService, AuthGuard],
   bootstrap: [AppComponent]
