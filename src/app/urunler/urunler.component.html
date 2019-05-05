@@ -4,11 +4,13 @@
     <div class="urunlerMenu col-md-3">
       <div class="list-group list-group-flush" id="list-tab" role="tablist">
         <a  *ngFor="let kat of kategoriler"
+            [ngClass]="{'active':kat.id == 1 ? true :false}"
            class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
            id="list-home-list"
            data-toggle="list"
            href="#list-home-{{kat.id}}"
            role="tab"
+           (click)="onkategori(kat)"
            aria-controls="home">
           {{kat.kategoriAdi}}
           <i class="fa fa-angle-right fa-lg"></i>
@@ -17,24 +19,51 @@
     </div>
     <div class="urunlerDetay col-md-9">
       <div class="tab-content" id="nav-tabContent">
-        <div  *ngFor="let urun of urunler | groupBy:'katid'"
-             class="tab-pane fade" 
-             id="list-home-{{urun.key}}"
-             role="tabpanel"
-             aria-labelledby="list-home-list">
-          <h6>Kamp Çadırları</h6>
+        <div *ngIf="!urunDetayShow">
+          <div class="tab-pane fade"
+                id="list-home-{{this.selectedKategori.id}}"
+                role="tabpanel"
+                aria-labelledby="list-home-list">
+            <h6>{{this.selectedKategori.kategoriAdi}}</h6>
             <div class="urunContainer">
-              <figure *ngFor="let val of urun.value">
+              <figure *ngFor="let urun of this.selectedUrunler">
                 <div class="urunBox">
-                    <a href="#" type="button"  data-toggle="modal" data-target="#exampleModalCenter">
-                      <img src="../../assets/img/logo_sunbrella.jpg" alt="sunberella"/>
-                    </a>
+                  <a (click)="urunDetay(urun)" type="button"  data-toggle="modal" data-target="#exampleModalCenter">
+                    <img src="{{urun.urunPic1}}" class="img-fluid" alt="sunberella"/>
+                  </a>
                   <figcaption>
-                    <span>{{val.urunAdi}}</span>
+                    <span>{{urun.urunAdi}}</span>
                   </figcaption>
                 </div>
               </figure>
             </div>
+          </div>
+        </div>
+        <div class="container-fluid urun-detay" *ngIf="urunDetayShow">
+          <div class="row urun-adı">
+            <label><b>Ürün Adı</b> : </label>
+            <span>{{selectedUrun.urunAdi}}</span>
+          </div>
+          <div class="row urun-resim">
+            <label><b>Ürün Resimleri</b></label>
+          </div>
+          <div class="row d-flex justify-content-between">
+            <div class="col-md-4">
+              <img src="{{selectedUrun.urunPic1}}" class="img-thumbnail"/>
+            </div>
+            <div class="col-md-4">
+              <img src="{{selectedUrun.urunPic2}}" class="img-thumbnail"/>
+            </div>
+            <div class="col-md-4">
+              <img src="{{selectedUrun.urunPic3}}" class="img-thumbnail"/>
+            </div>
+          </div>
+          <div class="row urun-aciklama">
+            <label><b>Ürün Detay</b>:</label>
+          </div>
+          <div class="row">
+            <span>{{selectedUrun.urunDetay}}</span>
+          </div>
         </div>
       </div>
     </div>

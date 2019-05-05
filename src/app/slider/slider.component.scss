@@ -97,3 +97,21 @@
     }
   }
 }
+@media  (max-width: 767px) {
+  .carousel {
+    height: 300px;
+    top: 200px;
+    z-index: 1;
+    .carousel-inner {
+      .carousel-item {
+        .carousel-caption{
+          height: 150px;
+        }
+        img {
+          width: auto;
+          height: auto;
+        }
+      }
+    }
+  }
+}

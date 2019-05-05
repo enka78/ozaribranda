@@ -17,18 +17,20 @@ if(isset($postdata) && !empty($postdata))
     }*/
 
     // Sanitize.
+    $galeriText = mysqli_real_escape_string($con, $request->galeriText);
     $galeriPic = mysqli_real_escape_string($con, $request->galeriPic);
     $aktif = mysqli_real_escape_string($con, $request->active);
     $sira = mysqli_real_escape_string($con, $request->sira);
 
 
     // Create.
-    $sql = "INSERT INTO `galeri`(`id`,`galeriPic`,`active`, `sira`) VALUES (null,'{$galeriPic}','{$aktif}', '{$sira}')";
+    $sql = "INSERT INTO `galeri`(`id`,`galeriText`,`galeriPic`,`active`, `sira`) VALUES (null,'{$galeriText}','{$galeriPic}','{$aktif}', '{$sira}')";
 
     if(mysqli_query($con,$sql))
     {
         http_response_code(201);
         $galeri = [
+            'galeriText' => $galeriText,
             'galeriPic' => $galeriPic,
             'active' => $aktif,
             'sira' => $sira,

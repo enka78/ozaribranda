@@ -1,8 +1,15 @@
 <div class="marka">
   <h5>Markalar</h5>
   <div class="markaContainer">
-    <div class="markaBox" *ngFor="let mar of markalar">
-        <img src="../../assets/img/{{mar.markaPic}}" alt="{{mar.markaText}}"/>
-    </div>
+    <figure *ngFor="let mar of markalar">
+      <div class="markaBox">
+        <a  type="button"  data-toggle="modal" data-target="#exampleModalCenter">
+          <img src="{{mar.markaPic}}" class="img-fluid" alt="{{mar.markaText}}"/>
+        </a>
+        <figcaption>
+          <span>{{mar.markaText}}</span>
+        </figcaption>
+      </div>
+    </figure>
   </div>
 </div>

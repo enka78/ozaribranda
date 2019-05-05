@@ -15,7 +15,7 @@ import {Kategori} from '../models/kategori';
 export class ApiService {
 
   // PHP_API_SERVER = 'http://127.0.0.1:3000';
-  PHP_API_SERVER = 'http://ozaribranda.com';
+   PHP_API_SERVER = 'http://ozaribranda.com';
   constructor(private httpClient: HttpClient) { }
 /*---------------------    read          --------------*/
   readUsers(): Observable<User[]> {

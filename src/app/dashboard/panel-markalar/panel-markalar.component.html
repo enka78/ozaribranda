@@ -6,27 +6,28 @@
     <div class="col-md-5">
       <h3>Yeni Kayıt</h3>
       <hr>
-      <form [formGroup]="markaForm" (ngSubmit)="onSubmit()">
+      <form [formGroup]="markaForm" (ngSubmit)="onSubmit()" novalidate>
         <div class="form-group">
           <label for="exampleFormControlInput1">Marka Adı</label>
-          <input formControlName="markaText"  class="form-control" id="exampleFormControlInput1"/>
+          <input formControlName="markaText"  class="form-control" id="exampleFormControlInput1" required/>
         </div>
         <div class="form-group">
           <label>Marka Resim</label>
-          <app-file-upload formControlName="markaPic"></app-file-upload>
+          <app-file-upload  (fileUrl)="getFileUrl($event)"></app-file-upload>
         </div>
         <div class="form-group">
           <label for="exampleFormControlSelect1">Aktif / Pasif</label>
-          <select formControlName="active" class="form-control" id="exampleFormControlSelect1">
+          <select formControlName="active" class="form-control" id="exampleFormControlSelect1" required>
             <option value="1">Aktif</option>
             <option value="0">Pasif</option>
           </select>
         </div>
         <div class="form-group">
           <label for="exampleFormControlTextarea4">Sira</label>
-          <input formControlName="sira" class="form-control" id="exampleFormControlTextarea4"/>
+          <input formControlName="sira" class="form-control" id="exampleFormControlTextarea4" required/>
         </div>
-        <button type="submit" class="btn btn-primary btn-block mb-2">Kaydet</button>
+        <button type="submit" *ngIf="this.selectedMarka.id==null" [disabled]="!markaForm.valid" class="btn btn-primary btn-block mb-2">Kaydet</button>
+        <button type="submit" *ngIf="this.selectedMarka.id!=null" [disabled]="!markaForm.valid" class="btn btn-primary btn-block mb-2">Güncelle</button>
       </form>
 
     </div>
@@ -34,16 +35,31 @@
       <h3>Mevcut Kayıtlar</h3>
       <hr>
       <ul class="list-group">
-        <li class="list-group-item d-flex justify-content-between" *ngFor="let mar of markalar">
-          <div>
-            <span>{{mar.markaText}}</span>
-            <span>{{mar.markaPic}}</span>
-            <span>{{mar.active}}</span>
-            <span>{{mar.sira}}</span>
-          </div>
-          <div>
-            <button class="btn btn-sm btn-primary mx-1">Düzenle</button>
-            <button class="btn btn-sm btn-info mx-1">Sil</button>
+        <li class="list-group-item d-flex justify-content-between" [ngClass]="{'active': this.selectedMarka.id == mar.id}" *ngFor="let mar of markalar">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-4">
+                <img class="img-thumbnail" src="{{mar.markaPic}}"/>
+              </div>
+              <div class="col-md-5">
+                <div class="row">
+                  <label><b>Marka Adı</b> : </label>
+                  <span>{{mar.markaText}}</span>
+                </div>
+                <div class="row">
+                  <label><b>Active / Pasive</b> :</label>
+                  <span>{{mar.active == 1 ? 'active' : 'pasive'}}</span>
+                </div>
+                <div class="row">
+                  <label><b>Sira</b> :</label>
+                  <span>{{mar.sira}}</span>
+                </div>
+              </div>
+              <div class="col-md-3 d-flex justify-content-end align-items-center">
+                <button class="btn btn-sm btn-info mx-1" (click)="selected(mar)">Düzenle</button>
+                <button class="btn btn-sm btn-danger mx-1" (click)="delete(mar.id)">Sil</button>
+              </div>
+            </div>
           </div>
         </li>
       </ul>

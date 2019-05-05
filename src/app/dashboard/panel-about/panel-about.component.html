@@ -9,19 +9,20 @@
         <hr>
         <div class="form-group">
           <label for="exampleFormControlTextarea1">Hakkımızda</label>
-          <textarea formControlName="hakimizda" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+<!--          <ejs-richtexteditor></ejs-richtexteditor>-->
+          <textarea formControlName="hakimizdaText" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
         </div>
         <div class="form-group">
           <label for="exampleFormControlTextarea2">Vizyonumuz</label>
-          <textarea formControlName="vizyonumuz" class="form-control" id="exampleFormControlTextarea2" rows="3"></textarea>
+          <textarea formControlName="vizyonText" class="form-control" id="exampleFormControlTextarea2" rows="3"></textarea>
         </div>
         <div class="form-group">
           <label for="exampleFormControlTextarea3">Misyonumuz</label>
-          <textarea formControlName="misyonumuz" class="form-control" id="exampleFormControlTextarea3" rows="3"></textarea>
+          <textarea formControlName="misyonText" class="form-control" id="exampleFormControlTextarea3" rows="3"></textarea>
         </div>
         <div class="form-group">
           <label for="exampleFormControlSelect1">Aktif / Pasif</label>
-          <select formControlName="aktif" class="form-control" id="exampleFormControlSelect1">
+          <select formControlName="active" class="form-control" id="exampleFormControlSelect1">
             <option value="1">Aktif</option>
             <option value="0">Pasif</option>
           </select>
@@ -30,7 +31,8 @@
           <label for="exampleFormControlTextarea4">Sira</label>
           <input formControlName="sira" class="form-control" id="exampleFormControlTextarea4"/>
         </div>
-        <button type="submit" class="btn btn-primary btn-block mb-2">Kaydet</button>
+        <button type="submit" *ngIf="this.selectedAbout.id==null" [disabled]="!aboutForm.valid" class="btn btn-primary btn-block mb-2">Kaydet</button>
+        <button type="submit" *ngIf="this.selectedAbout.id!=null" [disabled]="!aboutForm.valid" class="btn btn-primary btn-block mb-2">Güncelle</button>
       </form>
 
     </div>
@@ -38,15 +40,36 @@
       <h3>Mevcut Kayıtlar</h3>
       <hr>
       <ul class="list-group mt-5">
-        <li class="list-group-item d-flex justify-content-between" *ngFor="let about of abouts">
-          <div>
-            <span>{{about.hakimizdaText}}</span>
-            <span>{{about.misyonText}}</span>
-            <span>{{about.vizyonText}}</span>
-          </div>
-          <div>
-            <button class="btn btn-sm btn-primary mx-1">Düzenle</button>
-            <button class="btn btn-sm btn-info mx-1">Sil</button>
+        <li class="list-group-item d-flex justify-content-between" [ngClass]="{'active': this.selectedAbout.id == about.id}" *ngFor="let about of abouts" >
+          <div class="container">
+            <div class="row">
+              <div class="col-md-9">
+                <div class="row">
+                  <label><b>Hakkımızda</b> : </label>
+                  <span>{{about.hakimizdaText}}</span>
+                </div>
+                <div class="row">
+                  <label><b>Misyonumuz</b> : </label>
+                  <span>{{about.misyonText}}</span>
+                </div>
+                <div class="row">
+                  <label><b>Vizyonumuz</b> : </label>
+                  <span>{{about.vizyonText}}</span>
+                </div>
+                <div class="row">
+                  <label><b>Active / Pasive</b> :</label>
+                  <span>{{about.active == 1 ? 'active' : 'pasive'}}</span>
+                </div>
+                <div class="row">
+                  <label><b>Sira</b> :</label>
+                  <span>{{about.sira}}</span>
+                </div>
+              </div>
+              <div class="col-md-3 d-flex justify-content-end align-items-center">
+                <button class="btn btn-sm btn-info mx-1" (click)="selected(about)">Düzenle</button>
+                <button class="btn btn-sm btn-danger mx-1" (click)="delete(about.id)">Sil</button>
+              </div>
+            </div>
           </div>
         </li>
       </ul>

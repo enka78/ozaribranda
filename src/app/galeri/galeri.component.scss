@@ -21,6 +21,13 @@
       background-color: white;
       margin-bottom: 20px;
       border: 1px solid #c78604;
+      figcaption{
+        margin-top: 20px;
+        border-top: 1px solid #ffc107;
+        span{
+          margin-left: 30px;
+        }
+      }
       a{
         display:flex;
         align-items: stretch;

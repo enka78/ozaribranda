@@ -16,12 +16,13 @@ if(isset($postdata) && !empty($postdata))
 
     // Sanitize.
     $id    = mysqli_real_escape_string($con, (int)$request->id);
+    $galeriText = mysqli_real_escape_string($con, trim($request->galeriText));
     $galeriPic = mysqli_real_escape_string($con, trim($request->galeriPic));
     $active = mysqli_real_escape_string($con, (int)$request->active);
     $sira = mysqli_real_escape_string($con, (int)$request->sira);
 
     // Update.
-    $sql = "UPDATE `galeri` SET `galeriPic`='$galeriPic',`active`='$active',`sira`='$sira' WHERE `id` = '{$id}' LIMIT 1";
+    $sql = "UPDATE `galeri` SET `galeriText`='$galeriText',`galeriPic`='$galeriPic',`active`='$active',`sira`='$sira' WHERE `id` = '{$id}' LIMIT 1";
 
     if(mysqli_query($con, $sql))
     {

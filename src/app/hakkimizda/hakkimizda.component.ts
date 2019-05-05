@@ -9,7 +9,7 @@ import {About} from '../models/about';
 })
 export class HakkimizdaComponent implements OnInit {
 
-  hakimizdaList: About[];
+  hakimizdaList: About[] = [];
   constructor(private apiService: ApiService) { }
 
   ngOnInit() {

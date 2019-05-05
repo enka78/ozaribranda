@@ -61,6 +61,7 @@
 
   }
   .nav-container{
+    z-index: 3;
     .navbar{
       float: right;
       border: 1px solid #c78604;
@@ -138,6 +139,7 @@
     height: calc(100vh - 190px);
     margin-top: 20px;
     overflow: auto;
+    z-index: 3;
     .pdf-link{
       .pdf-container{
         float: left;
@@ -232,7 +234,7 @@
     border-radius: 25px;
     border: 1px solid  #c78604;
     height: 50px;
-    display: flex;
+    display: flex !important;
     justify-content: center;
     align-items: center;
     .sosyal-instagram{
@@ -259,6 +261,11 @@
     }
   }
 }
-
+.mobile-back{
+  width: 100%;
+  position: absolute;
+  z-index: 2;
+  top: 170px;
+}
 
 

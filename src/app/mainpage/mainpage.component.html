@@ -1,8 +1,15 @@
-<div class="container-fluid d-none d-sm-block">
+<div class="container-fluid">
   <div class="row">
     <app-slider></app-slider>
   </div>
 </div>
+<!--<div class="container-fluid d-block d-sm-none">-->
+<!--    <div class="row ">-->
+<!--        <div class="mobile-back">-->
+<!--            <img src="../../assets/img/mobil-back.png" class="img-fluid" />-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
 <div class="container-fluid">
   <div class="row">
     <div class="container main-container col-md-12 px-md-5 px-sm-3" [ngClass]="lightStatus ? 'main-container' : 'main-container-dark'">
@@ -167,26 +174,26 @@
         </div>
     </div>
   </div>
-  <div class="row fixed-bottom">
+  <div class="row fixed-bottom" *ngIf="routeIsActive('/main')">
     <div class="footer">
       <div class="copyright">
         CopyRight <i class="fa fa-copyright"></i> Özarı Branda
       </div>
     </div>
   </div>
-  <div class="row fixed-bottom d-block d-sm-none">
+  <div class="row fixed-bottom" *ngIf="routeIsActive('/main')">
         <div class="dropdown sosyal-dropdown">
             <button class="btn btn-link dropdown-toggle sosial-btn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fa fa-users" aria-hidden="true"></i>
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item sosial" href="tel:+905323727860">
+                    <a class="dropdown-item sosial d-block d-sm-none" href="tel:+905323727860">
                         <i class="fa fa-phone" aria-hidden="true"></i>
                     </a>
                     <a class="dropdown-item sosial" href="mailto:info@ozaribranda.com">
                        <i class="fa fa-envelope-o" aria-hidden="true"></i>
                     </a>
-                    <a class="dropdown-item sosial" href="https://api.whatsapp.com/send?phone=905323727860">
+                    <a class="dropdown-item sosial d-block d-sm-none" href="https://api.whatsapp.com/send?phone=905323727860">
                         <i class="fa fa-whatsapp  text-success" aria-hidden="true"></i>
                     </a>
                     <a class="dropdown-item sosial" href="https://www.instagram.com/ozaribranda/">

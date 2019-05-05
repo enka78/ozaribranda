@@ -1,6 +1,6 @@
 export  class  Kategori {
     id: number;
-    kategoriAdi: number;
+    kategoriAdi: string;
     active: number;
     sira: number;
 }

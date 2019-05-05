@@ -12,7 +12,6 @@ import { SliderComponent } from './slider/slider.component';
 import { HakkimizdaComponent } from './hakkimizda/hakkimizda.component';
 import { UrunlerComponent } from './urunler/urunler.component';
 import { IletisimComponent } from './iletisim/iletisim.component';
-import { UrunlerDetayComponent } from './urunler-detay/urunler-detay.component';
 import { MarkalarComponent } from './markalar/markalar.component';
 import {AngularFontAwesomeModule} from 'angular-font-awesome';
 import { GaleriComponent } from './galeri/galeri.component';
@@ -31,6 +30,8 @@ import { ActivePipe } from './active.pipe';
 import { GroupByPipe } from './group-by.pipe';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RichTextEditorAllModule } from '@syncfusion/ej2-angular-richtexteditor';
+import { ModalComponent } from './modal/modal.component';
 
 
 
@@ -42,7 +43,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HakkimizdaComponent,
     UrunlerComponent,
     IletisimComponent,
-    UrunlerDetayComponent,
     MarkalarComponent,
     GaleriComponent,
     LoginComponent,
@@ -54,7 +54,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     PanelMarkalarComponent,
     FileUploadComponent,
     ActivePipe,
-    GroupByPipe
+    GroupByPipe,
+    ModalComponent
   ],
     imports: [
         BrowserModule,
@@ -68,7 +69,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
         FormsModule,
         ReactiveFormsModule,
         ToastrModule.forRoot(),
-        BrowserAnimationsModule
+        BrowserAnimationsModule,
+        RichTextEditorAllModule
     ],
   providers: [UserService, AuthGuard],
   bootstrap: [AppComponent]

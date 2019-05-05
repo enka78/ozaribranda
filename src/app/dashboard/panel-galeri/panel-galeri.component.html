@@ -6,23 +6,28 @@
     <div class="col-md-5">
       <h3>Yeni Kayıt</h3>
       <hr>
-      <form [formGroup]="galeriForm" (ngSubmit)="onSubmit()">
+      <form [formGroup]="galeriForm" (ngSubmit)="onSubmit()" novalidate>
+        <div class="form-group">
+          <label for="exampleFormControlInput1">Resim Yazı</label>
+          <input formControlName="galeriText"  class="form-control" id="exampleFormControlInput1" required/>
+        </div>
         <div class="form-group">
           <label>Galeri Resim</label>
-          <app-file-upload formControlName="galeriPic"></app-file-upload>
+          <app-file-upload  (fileUrl)="getFileUrl($event)"></app-file-upload>
         </div>
         <div class="form-group">
           <label for="exampleFormControlSelect1">Aktif / Pasif</label>
-          <select formControlName="active" class="form-control" id="exampleFormControlSelect1">
+          <select formControlName="active" class="form-control" id="exampleFormControlSelect1" required>
             <option value="1">Aktif</option>
             <option value="0">Pasif</option>
           </select>
         </div>
         <div class="form-group">
           <label for="exampleFormControlTextarea4">Sira</label>
-          <input formControlName="sira" class="form-control" id="exampleFormControlTextarea4"/>
+          <input formControlName="sira" class="form-control" id="exampleFormControlTextarea4" required/>
         </div>
-        <button type="submit" class="btn btn-primary btn-block mb-2">Kaydet</button>
+        <button type="submit" *ngIf="this.selectedGaleri.id==null" [disabled]="!galeriForm.valid" class="btn btn-primary btn-block mb-2">Kaydet</button>
+        <button type="submit" *ngIf="this.selectedGaleri.id!=null" [disabled]="!galeriForm.valid" class="btn btn-primary btn-block mb-2">Güncelle</button>
       </form>
 
     </div>
@@ -30,15 +35,31 @@
       <h3>Mevcut Kayıtlar</h3>
       <hr>
       <ul class="list-group">
-        <li class="list-group-item d-flex justify-content-between" *ngFor="let gal of galeri">
-          <div>
-            <span>{{gal.galeriPic}}</span>
-            <span>{{gal.active}}</span>
-            <span>{{gal.sira}}</span>
-          </div>
-          <div>
-            <button class="btn btn-sm btn-primary mx-1">Düzenle</button>
-            <button class="btn btn-sm btn-info mx-1">Sil</button>
+        <li class="list-group-item d-flex justify-content-between" [ngClass]="{'active': this.selectedGaleri.id == gal.id}" *ngFor="let gal of galeri">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-4">
+                <img class="img-thumbnail" src="{{gal.galeriPic}}"/>
+              </div>
+              <div class="col-md-5">
+                <div class="row">
+                  <label><b>Resim  Yazı</b> : </label>
+                  <span>{{gal.galeriText}}</span>
+                </div>
+                <div class="row">
+                  <label><b>Active / Pasive</b> :</label>
+                  <span>{{gal.active == 1 ? 'active' : 'pasive'}}</span>
+                </div>
+                <div class="row">
+                  <label><b>Sira</b> :</label>
+                  <span>{{gal.sira}}</span>
+                </div>
+              </div>
+              <div class="col-md-3 d-flex justify-content-end align-items-center">
+                <button class="btn btn-sm btn-info mx-1" (click)="selected(gal)">Düzenle</button>
+                <button class="btn btn-sm btn-danger mx-1" (click)="delete(gal.id)">Sil</button>
+              </div>
+            </div>
           </div>
         </li>
       </ul>

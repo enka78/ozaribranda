@@ -17,24 +17,24 @@ if(isset($postdata) && !empty($postdata))
     }*/
 
     // Sanitize.
-    $hakimizda = mysqli_real_escape_string($con, $request->hakimizda);
-    $vizyonumuz = mysqli_real_escape_string($con, $request->vizyonumuz);
-    $misyonumuz = mysqli_real_escape_string($con, $request->misyonumuz);
-    $aktif = mysqli_real_escape_string($con, $request->aktif);
+    $hakimizdaText = mysqli_real_escape_string($con, $request->hakimizdaText);
+    $vizyonText = mysqli_real_escape_string($con, $request->vizyonText);
+    $misyonText = mysqli_real_escape_string($con, $request->misyonText);
+    $active = mysqli_real_escape_string($con, $request->active);
     $sira = mysqli_real_escape_string($con, $request->sira);
 
 
     // Create.
-    $sql = "INSERT INTO `about`(`id`,`hakimizdaText`,`misyonText`, `vizyonText`, `active`, `sira`) VALUES (null,'{$hakimizda}','{$vizyonumuz}','{$misyonumuz}','{$aktif}', '{$sira}')";
+    $sql = "INSERT INTO `about`(`id`,`hakimizdaText`,`misyonText`, `vizyonText`, `active`, `sira`) VALUES (null,'{$hakimizdaText}','{$misyonText}','{$vizyonText}','{$active}', '{$sira}')";
 
     if(mysqli_query($con,$sql))
     {
         http_response_code(201);
         $about = [
-            'hakimizda' => $hakimizda,
-            'vizyonumuz' => $vizyonumuz,
-            'misyonumuz' => $misyonumuz,
-            'aktif' => $aktif,
+            'hakimizdaText' => $hakimizdaText,
+            'vizyonText' => $vizyonText,
+            'misyonText' => $misyonText,
+            'active' => $active,
             'sira' => $sira,
             'id'    => mysqli_insert_id($con)
         ];

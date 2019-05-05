@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewChild, } from '@angular/core';
+import {Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {Slider} from '../../models/slider';
 import {ApiService} from '../../services/api.service';
@@ -46,6 +46,8 @@ export class PanelSliderComponent implements OnInit {
         this.emptySelected();
         this.sliderForm.reset();
         this.toastr.success('Başarıyla Güncellendi');
+      }, (err) => {
+        this.toastr.success('Güncelleme Başarısız');
       });
     } else {
       this.apiservice.createSlider(this.sliderForm.value).subscribe(() => {
@@ -71,6 +73,8 @@ export class PanelSliderComponent implements OnInit {
       this.getSliders();
       this.emptySelected();
       this.toastr.success('Kayıt Başarıyla Silindi');
+    }, (err) => {
+      this.toastr.success('Kayıt Silinemedi');
     });
   }
 

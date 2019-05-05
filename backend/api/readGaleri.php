@@ -14,6 +14,7 @@ if($result = mysqli_query($con,$sql))
     while($row = mysqli_fetch_assoc($result))
     {
         $galeri[$i]['id']    = $row['id'];
+        $galeri[$i]['galeriText'] = $row['galeriText'];
         $galeri[$i]['galeriPic'] = $row['galeriPic'];
         $galeri[$i]['active'] = $row['active'];
         $galeri[$i]['sira'] = $row['sira'];
