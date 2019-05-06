@@ -15,7 +15,6 @@ export class SliderComponent implements OnInit {
 
   ngOnInit() {
     this.apiService.readSliders().subscribe((sliders: Slider[]) => {
-      console.log(sliders);
       this.sliders = sliders;
     });
   }

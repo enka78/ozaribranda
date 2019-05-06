@@ -55,7 +55,6 @@ export class PanelUrunlerComponent implements OnInit {
       this.apiservice.updateUrunler(this.urunlerForm.value).subscribe((urun: Urun) => {
         this.getUrunler();
         this.emptySelected();
-        console.log(this.urunlerForm);
         this.urunlerForm.reset();
         this.toastr.success('Başarıyla Güncellendi');
       }, (err) => {

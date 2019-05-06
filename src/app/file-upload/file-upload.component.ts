@@ -1,6 +1,7 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {ApiService} from '../services/api.service';
 import { FormBuilder, FormGroup} from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-file-upload',
@@ -13,7 +14,7 @@ export class FileUploadComponent implements OnInit {
   form: FormGroup;
   uploadResponse: any;
 
-  constructor(private formBuilder: FormBuilder, private apiService: ApiService) { }
+  constructor(private formBuilder: FormBuilder, private apiService: ApiService, private toastr: ToastrService) { }
 
   ngOnInit() {
     this.form = this.formBuilder.group({
@@ -36,10 +37,10 @@ export class FileUploadComponent implements OnInit {
       (res: any) => {
         this.uploadResponse = res;
         this.fileUrl.emit(res.url);
-        console.log(res);
+        this.toastr.success('Resim Başarıyla Yüklendi');
       },
       (err) => {
-        console.log(err);
+        this.toastr.warning('Resim Yüklenemedi');
       }
     );
   }
