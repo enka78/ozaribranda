@@ -4,7 +4,8 @@ require 'database.php';
 
 $response = array();
 $upload_dir = 'uploads/';
-$server_url = 'http://localhost:4200';
+// $server_url = 'http://ozaribranda.com';
+$server_url = 'http://127.0.0.1:4200';
 if($_FILES["uploadFile"]["name"])
 {
 
