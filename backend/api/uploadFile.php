@@ -4,8 +4,8 @@ require 'database.php';
 
 $response = array();
 $upload_dir = 'uploads/';
-$server_url = 'http://ozaribranda.com';
-//$server_url = 'http://127.0.0.1:4200';
+//$server_url = 'http://ozaribranda.com';
+$server_url = 'http://127.0.0.1:4200';
 if($_FILES["uploadFile"]["name"])
 {
 
@@ -31,7 +31,8 @@ if($_FILES["uploadFile"]["name"])
                 "status" => "success",
                 "error" => false,
                 "message" => "File uploaded successfully",
-                "url" => $server_url."/api/".$upload_name
+                //"url" => $server_url."/api/".$upload_name
+                "url" => $server_url.$upload_name
               );
         }else
         {

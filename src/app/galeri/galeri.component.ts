@@ -10,11 +10,16 @@ import {Galeri} from '../models/galeri';
 export class GaleriComponent implements OnInit {
 
   galeri: Galeri[];
+  fileUrl: any;
   constructor(private apiservice: ApiService) { }
 
   ngOnInit() {
     this.apiservice.readGaleri().subscribe((galeri: Galeri[]) => {
       this.galeri = galeri;
     });
+  }
+
+  openModal(img): void {
+    this.fileUrl = img.galeriPic;
   }
 }
