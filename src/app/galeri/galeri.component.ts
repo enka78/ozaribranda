@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ApiService} from '../services/api.service';
 import {Galeri} from '../models/galeri';
-
+declare var $: any;
 @Component({
   selector: 'app-galeri',
   templateUrl: './galeri.component.html',
@@ -16,6 +16,10 @@ export class GaleriComponent implements OnInit {
   ngOnInit() {
     this.apiservice.readGaleri().subscribe((galeri: Galeri[]) => {
       this.galeri = galeri;
+    });
+    $('#myModal').modal({
+      show: false,
+      backdrop: false
     });
   }
 

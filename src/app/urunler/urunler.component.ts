@@ -30,12 +30,14 @@ export class UrunlerComponent implements OnInit {
   getKategori() {
     this.apiService.readKategori().subscribe((kategori: Kategori[]) => {
       this.kategoriler = kategori;
+      this.selectedKategori = kategori[0];
     });
   }
 
   getUrunler() {
     this.apiService.readUrunler().subscribe((urun: Urun[]) => {
       this.urunler = urun;
+      this.onkategori(this.selectedKategori);
     });
   }
   urunDetay(urun: Urun) {
