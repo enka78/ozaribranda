@@ -44,34 +44,51 @@
     display: flex;
     flex-direction: row;
     flex-wrap:wrap;
-    justify-content:space-between;
-    .urunBox{
-      border-radius: 10px;
-      padding: 10px 20px;
-      background-color: white;
-      margin-bottom: 20px;
-      border: 1px solid #c78604;
-      figcaption{
-        border-top: 1px solid #ffc107;
-        margin-top: 20px;
+    justify-content:flex-start;
+    figure{
+      margin-right: 20px;
+      &:last-child{
+        margin: 0;
       }
-      a{
-        display:flex;
-        align-items: stretch;
-        width: 200px;
-        height: 100px;
-        overflow: hidden;
-        img{
-          width: 100%;
+      .urunBox{
+        border-radius: 10px;
+        padding: 10px 20px;
+        background-color: white;
+        margin-bottom: 20px;
+        border: 1px solid #c78604;
+        figcaption{
+          border-top: 1px solid #ffc107;
+          margin-top: 20px;
         }
-        span{
-          width: 100%;
+        a{
+          display:flex;
+          align-items: stretch;
+          width: 200px;
+          height: 150px;
+          overflow: hidden;
+          img{
+            width: 100%;
+          }
+          span{
+            width: 100%;
+          }
         }
-      }
-      &:hover{
-        opacity: 0.8;
-      }
+        &:hover{
+          opacity: 0.8;
+        }
 
+      }
+    }
+  }
+  @media  (max-width: 767px) {
+    .urunContainer{
+      justify-content:center;
+      figure {
+        margin: 0;
+      }
+    }
+    .kat-mobile{
+      margin-bottom: 20px;
     }
   }
 }

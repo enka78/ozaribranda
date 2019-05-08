@@ -20,7 +20,10 @@
           -1px 1px 0 #000,
           1px 1px 0 #000;
         h2{
-          font-size: 45px;
+          font-size: 60px;
+        }
+        p{
+          font-size: 58px;
         }
 /**
 * animation
@@ -106,6 +109,15 @@
       .carousel-item {
         .carousel-caption{
           height: 150px;
+          text-shadow: none;
+          h2{
+            font-size: 34px;
+            font-weight: bold;
+          }
+          p{
+            font-size: 32px;
+            font-weight: bold;
+          }
         }
         img {
           width: auto;

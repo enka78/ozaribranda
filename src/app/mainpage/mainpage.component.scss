@@ -180,6 +180,11 @@
           }
         }
       }
+      @media  (max-width: 767px) {
+        .pdf-container{
+          width: 200px;
+        }
+      }
       .sub-back-img{
         background: url("../../assets/img/sun-back.png") no-repeat  center center transparent;
       }
@@ -232,23 +237,32 @@
   .sosial{
     margin-bottom: 5px;
     border-radius: 25px;
-    border: 1px solid  #c78604;
     height: 50px;
     display: flex !important;
+    border: 1px solid #c78604;
     justify-content: center;
     align-items: center;
+    background: #c78604;
+    color: white;
     .sosyal-instagram{
       color: #d6249f;
     }
     i{
       font-size: 22px;
-      color: #c78604;
+      color: white;
+    }
+    &:hover{
+      background: white;
+      i{
+        color: #c78604 !important;
+      }
     }
   }
   .sosial-btn{
     border-radius: 25px;
-    color: #c78604;
-    border: 1px solid  #c78604;
+    background: #c78604;
+    border: 1px solid #c78604;
+    color: white;
     width: 50px;
     height: 50px;
     display: flex;
@@ -258,6 +272,10 @@
     }
     i{
       font-size: 16px;
+    }
+    &:hover{
+      background: white;
+      color:#c78604;
     }
   }
 }
