@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {ApiService} from '../services/api.service';
 import {Kategori} from '../models/kategori';
 import {Urun} from '../models/urun';
-import {stringify} from '@angular/compiler/src/util';
+
+declare var $: any;
 
 @Component({
   selector: 'app-urunler',
@@ -10,7 +11,7 @@ import {stringify} from '@angular/compiler/src/util';
   styleUrls: ['./urunler.component.scss']
 })
 export class UrunlerComponent implements OnInit {
-
+  fileUrl: any;
   kategoriler: Kategori[];
   selectedLevel: Kategori;
   urunler: Urun[];
@@ -28,6 +29,10 @@ export class UrunlerComponent implements OnInit {
   ngOnInit() {
     this.getKategori();
     this.getUrunler();
+    $('#myModal').modal({
+      show: false,
+      backdrop: false
+    });
   }
   getKategori() {
     this.apiService.readKategori().subscribe((kategori: Kategori[]) => {
@@ -56,5 +61,9 @@ export class UrunlerComponent implements OnInit {
     this.selectedKategori = this.selectedLevel;
     this.urunDetayShow = false;
     this.selectedUrunler = this.urunler.filter(x => x.katid === this.selectedLevel.id);
+  }
+
+  openModal(img): void {
+    this.fileUrl = img;
   }
 }

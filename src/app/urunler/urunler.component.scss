@@ -87,8 +87,28 @@
         margin: 0;
       }
     }
+    .urun-detay{
+      .img-thumbnail{
+        height: auto;
+      }
+    }
     .kat-mobile{
       margin-bottom: 20px;
+    }
+  }
+}
+.modal{
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+  .modal-header{
+    justify-content: flex-end;
+  }
+  .img-fluid{
+    max-height: 600px;
+  }
+  @media  (max-width: 767px) {
+    .img-fluid{
+      max-height: 300px;
     }
   }
 }

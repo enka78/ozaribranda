@@ -64,4 +64,12 @@
   .modal-header{
    justify-content: flex-end;
  }
+  .img-fluid{
+    max-height: 600px;
+  }
+  @media  (max-width: 767px) {
+    .img-fluid{
+      max-height: 300px;
+    }
+  }
 }
