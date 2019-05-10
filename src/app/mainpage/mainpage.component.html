@@ -1,6 +1,37 @@
-<div class="container-fluid">
+<div class="container-fluid" *ngIf="routeIsActive('/main')">
   <div class="row">
     <app-slider></app-slider>
+  </div>
+</div>
+<div class="container-fluid d-none d-sm-block" *ngIf="routeIsActive('/main/hakkimizda')">
+  <div class="row">
+    <div class="page-image">
+      <img src="../../assets/img/about.png" alt="">
+    </div>
+  </div>
+</div>
+<div class="container-fluid d-none d-sm-block" *ngIf="routeIsActive('/main/urunlerimiz')">
+  <div class="row">
+    <img src="" alt="">
+  </div>
+</div>
+<div class="container-fluid d-none d-sm-block" *ngIf="routeIsActive('/main/markalar')">
+  <div class="row">
+    <div class="page-image">
+      <img src="../../assets/img/marka.png" alt="">
+    </div>
+  </div>
+</div>
+<div class="container-fluid d-none d-sm-block" *ngIf="routeIsActive('/main/galeri')">
+  <div class="row">
+    <div class="page-image">
+      <img src="../../assets/img/galeri.png" alt="">
+    </div>
+  </div>
+</div>
+<div class="container-fluid d-none d-sm-block" *ngIf="routeIsActive('/main/iletisim')">
+  <div class="page-image">
+    <img src="../../assets/img/contact.png" alt="">
   </div>
 </div>
 <div class="container-fluid">
@@ -167,8 +198,8 @@
         </div>
     </div>
   </div>
-  <div class="row fixed-bottom" *ngIf="routeIsActive('/main')">
-    <div class="footer">
+  <div class="row" *ngIf="routeIsActive('/main')">
+    <div class="footer d-flex justify-content-end" [ngClass]="lightStatus ? '' : 'footer-black'">
       <div class="copyright">
         CopyRight <i class="fa fa-copyright"></i> Özarı Branda
       </div>

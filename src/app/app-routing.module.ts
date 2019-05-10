@@ -14,6 +14,7 @@ import {PanelSliderComponent} from './dashboard/panel-slider/panel-slider.compon
 import {PanelGaleriComponent} from './dashboard/panel-galeri/panel-galeri.component';
 import {PanelMarkalarComponent} from './dashboard/panel-markalar/panel-markalar.component';
 import {PanelUrunlerComponent} from './dashboard/panel-urunler/panel-urunler.component';
+import {PanelKategoriComponent} from './dashboard/panel-kategori/panel-kategori.component';
 
 
 
@@ -37,6 +38,7 @@ const routes: Routes = [
                {path: 'hakkimizda', component: PanelAboutComponent },
                {path: 'slider', component: PanelSliderComponent },
                {path: 'galeri', component: PanelGaleriComponent },
+               {path: 'kategori', component: PanelKategoriComponent },
                {path: 'markalar', component: PanelMarkalarComponent },
                {path: 'urunler', component: PanelUrunlerComponent },
                 ]

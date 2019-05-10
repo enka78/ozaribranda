@@ -31,6 +31,7 @@ import { GroupByPipe } from './group-by.pipe';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RichTextEditorAllModule } from '@syncfusion/ej2-angular-richtexteditor';
+import { PanelKategoriComponent } from './dashboard/panel-kategori/panel-kategori.component';
 
 
 
@@ -54,7 +55,8 @@ import { RichTextEditorAllModule } from '@syncfusion/ej2-angular-richtexteditor'
     PanelMarkalarComponent,
     FileUploadComponent,
     ActivePipe,
-    GroupByPipe
+    GroupByPipe,
+    PanelKategoriComponent
   ],
     imports: [
         BrowserModule,
