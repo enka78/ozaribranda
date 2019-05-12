@@ -34,7 +34,7 @@ if(isset($postdata) && !empty($postdata))
             'sira' => $sira,
             'id'    => mysqli_insert_id($con)
         ];
-        echo json_encode($kategoriler ,);
+        echo json_encode($kategoriler);
     }
     else
     {
