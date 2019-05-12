@@ -1,6 +1,6 @@
 <div class="container-fluid">
   <div class="row m-3">
-    <h2 class="">Markalar</h2>
+    <h2 class="">Referanslar</h2>
   </div>
   <div class="row m-5">
     <div class="col-md-5">
@@ -8,11 +8,11 @@
       <hr>
       <form [formGroup]="markaForm" (ngSubmit)="onSubmit()" novalidate>
         <div class="form-group">
-          <label for="exampleFormControlInput1">Marka Adı</label>
+          <label for="exampleFormControlInput1">Referans Adı</label>
           <input formControlName="markaText"  class="form-control" id="exampleFormControlInput1" required/>
         </div>
         <div class="form-group">
-          <label>Marka Resim</label>
+          <label>Referans Resim</label>
           <app-file-upload  (fileUrl)="getFileUrl($event)"></app-file-upload>
         </div>
         <div class="form-group">
@@ -43,7 +43,7 @@
               </div>
               <div class="col-md-5">
                 <div class="row">
-                  <label><b>Marka Adı</b> : </label>
+                  <label><b>Referans Adı</b> : </label>
                   <span>{{mar.markaText}}</span>
                 </div>
                 <div class="row">

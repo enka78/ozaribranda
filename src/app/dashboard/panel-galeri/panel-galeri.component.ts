@@ -53,6 +53,7 @@ export class PanelGaleriComponent implements OnInit {
       this.apiservice.createGaleri(this.galeriForm.value).subscribe(() => {
         this.getGaleri();
         this.emptySelected();
+        this.galeriForm.reset();
         this.toastr.success('Kayıt Başarıyla Gerçekleşti');
       }, (err) => {
         this.toastr.warning('Kayıt Başarısız');

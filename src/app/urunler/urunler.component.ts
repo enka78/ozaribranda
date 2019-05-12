@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ApiService} from '../services/api.service';
 import {Kategori} from '../models/kategori';
 import {Urun} from '../models/urun';
@@ -24,6 +24,7 @@ export class UrunlerComponent implements OnInit {
     active: null,
     sira: null
 };
+
   constructor( private apiService: ApiService) { }
 
   ngOnInit() {
@@ -66,4 +67,5 @@ export class UrunlerComponent implements OnInit {
   openModal(img): void {
     this.fileUrl = img;
   }
+
 }

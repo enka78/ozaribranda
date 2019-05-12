@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, ElementRef, OnInit,  Renderer2, ViewChild} from '@angular/core';
 import {Router} from '@angular/router';
 
 
@@ -8,9 +8,10 @@ import {Router} from '@angular/router';
   styleUrls: ['./mainpage.component.scss']
 })
 export class MainpageComponent implements OnInit {
-
+  @ViewChild('scrollTop') scrollElm: ElementRef;
+  @ViewChild('scrollEl') scrollElment: ElementRef;
   lightStatus: boolean = true;
-  constructor(private router: Router) { }
+  constructor(private router: Router,  private renderer: Renderer2) { }
 
   ngOnInit() {
   }
@@ -22,4 +23,15 @@ export class MainpageComponent implements OnInit {
   lightChange() {
     this.lightStatus = !this.lightStatus;
   }
+
+    onScroll($event) {
+      if ($event.srcElement.scrollTop > 0) {
+          this.renderer.setStyle(this.scrollElm.nativeElement, 'visibility', 'visible');
+      } else {
+          this.renderer.setStyle(this.scrollElm.nativeElement, 'visibility', 'hidden');
+      }
+    }
+    onScrollTop() {
+        this.scrollElment.nativeElement.scroll(0, 0);
+    }
 }

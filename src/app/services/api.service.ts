@@ -55,6 +55,9 @@ export class ApiService {
   createGaleri(galeri: Galeri): Observable<Galeri> {
     return this.httpClient.post<Galeri>(`${this.PHP_API_SERVER}/api/createGaleri.php`, galeri);
   }
+  createKategori(kategori: Kategori): Observable<Kategori> {
+    return this.httpClient.post<Kategori>(`${this.PHP_API_SERVER}/api/createKategori.php`, kategori);
+  }
 
   /*---------------------    update         --------------*/
   updateSlider(slider: Slider) {
@@ -72,6 +75,9 @@ export class ApiService {
   updateUrunler(urun: Urun) {
     return this.httpClient.put<Urun>(`${this.PHP_API_SERVER}/api/updataUrunler.php`, urun);
   }
+  updateKategori(kategori: Kategori) {
+    return this.httpClient.put<Kategori>(`${this.PHP_API_SERVER}/api/updataKategori.php`, kategori);
+  }
 
   /*---------------------    delete          --------------*/
   deleteSlider(id: number) {
@@ -88,6 +94,9 @@ export class ApiService {
   }
   deleteMarkalar(id: number) {
     return this.httpClient.delete<Marka>(`${this.PHP_API_SERVER}/api/deleteMarkalar.php/?id=${id}`);
+  }
+  deleteKategori(id: number) {
+    return this.httpClient.delete<Kategori>(`${this.PHP_API_SERVER}/api/deleteKategori.php/?id=${id}`);
   }
 
   /*---------------------    upload file         --------------*/

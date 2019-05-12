@@ -53,6 +53,7 @@ export class PanelSliderComponent implements OnInit {
       this.apiservice.createSlider(this.sliderForm.value).subscribe(() => {
         this.getSliders();
         this.emptySelected();
+        this.sliderForm.reset();
         this.toastr.success('Kayıt Başarıyla Gerçekleşti');
       }, (err) => {
         this.toastr.success('Kayıt Başarısız');

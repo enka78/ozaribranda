@@ -24,7 +24,7 @@ const routes: Routes = [
        children: [
            {path: 'hakkimizda', component: HakkimizdaComponent },
            {path: 'urunlerimiz', component: UrunlerComponent },
-           {path: 'markalar', component: MarkalarComponent },
+           {path: 'referanslar', component: MarkalarComponent },
            {path: 'galeri', component: GaleriComponent },
            {path: 'iletisim', component: IletisimComponent},
        ]},
@@ -39,7 +39,7 @@ const routes: Routes = [
                {path: 'slider', component: PanelSliderComponent },
                {path: 'galeri', component: PanelGaleriComponent },
                {path: 'kategori', component: PanelKategoriComponent },
-               {path: 'markalar', component: PanelMarkalarComponent },
+               {path: 'referanslar', component: PanelMarkalarComponent },
                {path: 'urunler', component: PanelUrunlerComponent },
                 ]
        }

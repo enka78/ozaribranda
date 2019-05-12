@@ -52,6 +52,7 @@ export class PanelAboutComponent implements OnInit {
       this.apiservice.createAbout(this.aboutForm.value).subscribe(() => {
         this.getAbout();
         this.emptySelected();
+        this.aboutForm.reset();
         this.toastr.success('Kayıt Başarıyla Gerçekleşti');
       }, (err) => {
         this.toastr.success('Kayıt Başarısız');

@@ -64,6 +64,7 @@ export class PanelUrunlerComponent implements OnInit {
       this.apiservice.createUrunler(this.urunlerForm.value).subscribe(() => {
         this.getUrunler();
         this.emptySelected();
+        this.urunlerForm.reset();
         this.toastr.success('Kayıt Başarıyla Gerçekleşti');
       }, (err) => {
         this.toastr.warning('Kayıt Başarısız');

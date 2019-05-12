@@ -54,6 +54,7 @@ export class PanelMarkalarComponent implements OnInit {
       this.apiservice.createMarkalar(this.markaForm.value).subscribe(() => {
         this.getMarkalar();
         this.emptySelected();
+        this.markaForm.reset();
         this.toastr.success('Kayıt Başarıyla Gerçekleşti');
       }, (err) => {
         this.toastr.success('Kayıt Başarısız');
