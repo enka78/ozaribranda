@@ -32,7 +32,7 @@ export class UrunlerComponent implements OnInit {
     this.getUrunler();
     $('#myModal').modal({
       show: false,
-      backdrop: false
+      backdrop: false,
     });
   }
   getKategori() {

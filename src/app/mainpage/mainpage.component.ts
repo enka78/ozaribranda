@@ -25,7 +25,7 @@ export class MainpageComponent implements OnInit {
   }
 
     onScroll($event) {
-      if ($event.srcElement.scrollTop > 0) {
+      if ($event.srcElement.scrollTop > 200) {
           this.renderer.setStyle(this.scrollElm.nativeElement, 'visibility', 'visible');
       } else {
           this.renderer.setStyle(this.scrollElm.nativeElement, 'visibility', 'hidden');
