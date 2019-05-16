@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ApiService} from '../services/api.service';
 import {Kategori} from '../models/kategori';
 import {Urun} from '../models/urun';
+import {ModalService} from '../services/modal.service';
 
 declare var $: any;
 
@@ -25,7 +26,7 @@ export class UrunlerComponent implements OnInit {
     sira: null
 };
 
-  constructor( private apiService: ApiService) { }
+  constructor( private apiService: ApiService, private modalService: ModalService) { }
 
   ngOnInit() {
     this.getKategori();
@@ -64,8 +65,16 @@ export class UrunlerComponent implements OnInit {
     this.selectedUrunler = this.urunler.filter(x => x.katid === this.selectedLevel.id);
   }
 
-  openModal(img): void {
-    this.fileUrl = img;
+  // openModal(img): void {
+  //   this.fileUrl = img;
+  // }
+
+  openModal(id: string) {
+    this.modalService.open(id);
+  }
+
+  closeModal(id: string) {
+    this.modalService.close(id);
   }
 
 }

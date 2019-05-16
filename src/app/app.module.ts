@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import {AgmCoreModule} from '@agm/core';
 import { AgmSnazzyInfoWindowModule } from '@agm/snazzy-info-window';
 import { HttpClientModule } from '@angular/common/http';
-
+import { ReactiveFormsModule, FormsModule} from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,7 +17,6 @@ import {AngularFontAwesomeModule} from 'angular-font-awesome';
 import { GaleriComponent } from './galeri/galeri.component';
 import { LoginComponent } from './dashboard/login/login.component';
 import { DashMainpageComponent } from './dashboard/dash-mainpage/dash-mainpage.component';
-import { ReactiveFormsModule, FormsModule} from '@angular/forms';
 import {UserService} from './dashboard/login/user.service';
 import {AuthGuard} from './guards/auth.guard';
 import { PanelAboutComponent } from './dashboard/panel-about/panel-about.component';
@@ -32,6 +31,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RichTextEditorAllModule } from '@syncfusion/ej2-angular-richtexteditor';
 import { PanelKategoriComponent } from './dashboard/panel-kategori/panel-kategori.component';
+import { ModalComponent } from './modal/modal.component';
 
 
 
@@ -56,7 +56,8 @@ import { PanelKategoriComponent } from './dashboard/panel-kategori/panel-kategor
     FileUploadComponent,
     ActivePipe,
     GroupByPipe,
-    PanelKategoriComponent
+    PanelKategoriComponent,
+    ModalComponent
   ],
     imports: [
         BrowserModule,

@@ -82,7 +82,7 @@
             <div class="col-md-4">
               <a  type="button"
                   data-toggle="modal"
-                  (click)="openModal(selectedUrun.urunPic3)"
+                  (click)="openModal('custom-modal-1')"
                   data-target="#myModal">
                   <img src="{{selectedUrun.urunPic3}}" class="img-thumbnail"/>
               </a>
@@ -99,22 +99,9 @@
     </div>
   </div>
 </div>
-<!-- The Modal -->
-<div class="modal  fade" id="myModal">
-  <div class="modal-dialog modal-lg modal-dialog-centered">
-    <div class="modal-content">
 
-      <!-- Modal Header -->
-      <div class="modal-header">
-        <button type="button"  class="btn" data-dismiss="modal">
-          <i class="fa fa-close"></i>
-        </button>
-      </div>
-
-      <!-- Modal body -->
-      <div class="modal-body d-flex justify-content-center">
-        <img src="{{fileUrl}}" class="img-fluid" />
-      </div>
-    </div>
-  </div>
-</div>
+<app-jw-modal id="custom-modal-1">
+  <h1>A Custom Modal!</h1>
+  <p>Home page text: <input type="text" [(ngModel)]="bodyText" /></p>
+  <button (click)="closeModal('custom-modal-1');">Close</button>
+</app-jw-modal>
