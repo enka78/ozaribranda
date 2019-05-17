@@ -31,7 +31,6 @@ import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RichTextEditorAllModule } from '@syncfusion/ej2-angular-richtexteditor';
 import { PanelKategoriComponent } from './dashboard/panel-kategori/panel-kategori.component';
-import { ModalComponent } from './modal/modal.component';
 
 
 
@@ -56,8 +55,7 @@ import { ModalComponent } from './modal/modal.component';
     FileUploadComponent,
     ActivePipe,
     GroupByPipe,
-    PanelKategoriComponent,
-    ModalComponent
+    PanelKategoriComponent
   ],
     imports: [
         BrowserModule,
