@@ -1,9 +1,9 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output, TemplateRef} from '@angular/core';
 import {ApiService} from '../services/api.service';
 import {Kategori} from '../models/kategori';
 import {Urun} from '../models/urun';
+import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 
-declare var $: any;
 
 @Component({
   selector: 'app-urunler',
@@ -11,7 +11,8 @@ declare var $: any;
   styleUrls: ['./urunler.component.scss']
 })
 export class UrunlerComponent implements OnInit {
-  fileUrl: any;
+  modalRef: BsModalRef;
+  fileUrl: string;
   kategoriler: Kategori[];
   selectedLevel: Kategori;
   urunler: Urun[];
@@ -24,16 +25,10 @@ export class UrunlerComponent implements OnInit {
     active: null,
     sira: null
 };
-
-  constructor( private apiService: ApiService) { }
-
+  constructor( private apiService: ApiService, private modalService: BsModalService) { }
   ngOnInit() {
     this.getKategori();
     this.getUrunler();
-    $('#myModal').modal({
-      show: false,
-      backdrop: false,
-    });
   }
   getKategori() {
     this.apiService.readKategori().subscribe((kategori: Kategori[]) => {
@@ -63,9 +58,8 @@ export class UrunlerComponent implements OnInit {
     this.urunDetayShow = false;
     this.selectedUrunler = this.urunler.filter(x => x.katid === this.selectedLevel.id);
   }
-
-  openModal(img): void {
+  openModal(template: TemplateRef<any>, img: string) {
+    this.modalRef = this.modalService.show(template);
     this.fileUrl = img;
   }
-
 }

@@ -34,4 +34,5 @@ export class MainpageComponent implements OnInit {
     onScrollTop() {
         this.scrollElment.nativeElement.scroll(0, 0);
     }
+
 }

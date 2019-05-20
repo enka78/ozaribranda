@@ -32,6 +32,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RichTextEditorAllModule } from '@syncfusion/ej2-angular-richtexteditor';
 import { PanelKategoriComponent } from './dashboard/panel-kategori/panel-kategori.component';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 
 
@@ -71,7 +72,8 @@ import { PanelKategoriComponent } from './dashboard/panel-kategori/panel-kategor
         ReactiveFormsModule,
         ToastrModule.forRoot(),
         BrowserAnimationsModule,
-        RichTextEditorAllModule
+        RichTextEditorAllModule,
+        ModalModule.forRoot()
     ],
   providers: [UserService, AuthGuard],
   bootstrap: [AppComponent]
