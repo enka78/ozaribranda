@@ -29,7 +29,7 @@ export class IletisimComponent implements OnInit {
       this.contactForm.reset();
       this.toastr.success('Mesaj Başarıyla Gönderildi');
     }, (err) => {
-      this.toastr.success('Mesaj Gönderilemedi !');
+      this.toastr.error('Mesaj Gönderilemedi !');
     });
   }
 }
