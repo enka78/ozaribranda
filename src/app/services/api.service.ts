@@ -8,6 +8,7 @@ import {Galeri} from '../models/galeri';
 import {Marka} from '../models/marka';
 import {Urun} from '../models/urun';
 import {Kategori} from '../models/kategori';
+import {Contact} from '../models/contact';
 
 @Injectable({
   providedIn: 'root'
@@ -102,5 +103,8 @@ export class ApiService {
   /*---------------------    upload file         --------------*/
   uploadFile(uploadFile: any) {
     return this.httpClient.post<any>(`${this.PHP_API_SERVER}/api/uploadFile.php`, uploadFile);
+  }
+  sendMail(contact: Contact): Observable<Contact> {
+    return this.httpClient.post<Contact>(`${this.PHP_API_SERVER}/api/sendMail.php`, contact);
   }
 }
