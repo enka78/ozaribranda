@@ -15,7 +15,7 @@ export class IletisimComponent implements OnInit {
     contactSoyad: new FormControl('', Validators.required),
     contactEmail: new FormControl('', Validators.required),
     contactTel: new FormControl('', Validators.required),
-    contactAdres: new FormControl('', Validators.required)
+    contactMesaj: new FormControl('', Validators.required)
   });
   constructor(private apiservice: ApiService, private toastr: ToastrService) { }
   location = {lat: 41.0173149, lng: 28.9581623};
