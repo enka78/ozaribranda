@@ -3,5 +3,5 @@ export  class  Contact {
   contactSoyad: string;
   contactEmail: string;
   contactTel: string;
-  contactAdres: string;
+  contactMesaj: string;
 }
