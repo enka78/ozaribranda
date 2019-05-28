@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, BrowserTransferStateModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {AgmCoreModule} from '@agm/core';
 import { AgmSnazzyInfoWindowModule } from '@agm/snazzy-info-window';
@@ -33,37 +33,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RichTextEditorAllModule } from '@syncfusion/ej2-angular-richtexteditor';
 import { PanelKategoriComponent } from './dashboard/panel-kategori/panel-kategori.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
-import { CommonModule } from '@angular/common';
-import { TransferHttpCacheModule } from '@nguniversal/common';
-import { NgtUniversalModule } from '@ng-toolkit/universal';
+import { AppModule } from './app.module';
 
 
 
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    MainpageComponent,
-    SliderComponent,
-    HakkimizdaComponent,
-    UrunlerComponent,
-    IletisimComponent,
-    MarkalarComponent,
-    GaleriComponent,
-    LoginComponent,
-    DashMainpageComponent,
-    PanelAboutComponent,
-    PanelSliderComponent,
-    PanelUrunlerComponent,
-    PanelGaleriComponent,
-    PanelMarkalarComponent,
-    FileUploadComponent,
-    ActivePipe,
-    GroupByPipe,
-    PanelKategoriComponent
-  ],
     imports: [
-        BrowserModule.withServerTransition({ appId: 'serverApp' }),
+        
         AppRoutingModule,
         AngularFontAwesomeModule,
         AgmCoreModule.forRoot({
@@ -77,11 +54,10 @@ import { NgtUniversalModule } from '@ng-toolkit/universal';
         BrowserAnimationsModule,
         RichTextEditorAllModule,
         ModalModule.forRoot(),
-        CommonModule,
-        TransferHttpCacheModule,
-        NgtUniversalModule
+        AppModule,
+        BrowserTransferStateModule
     ],
   providers: [UserService, AuthGuard],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppBrowserModule { }

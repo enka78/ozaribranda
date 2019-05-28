@@ -31,7 +31,11 @@
             <textarea class="form-control" formControlName="contactMesaj"  rows="3" placeholder="Mesajınız..."></textarea>
           </div>
         </div>
-        <button type="submit" [disabled]="!contactForm.valid" class="btn btn-warning btn-block">Gönder</button>
+        <button type="submit" [disabled]="!contactForm.valid" class="btn btn-warning btn-block">
+            <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true" *ngIf="loading"></span>
+            <span *ngIf="loading">Mesajınız Gönderiliyor...</span>
+            <span *ngIf="!loading">Gönder</span>
+        </button>
       </form>
     </div>
     <div class="contact-map col-md-6 col-sm-12">

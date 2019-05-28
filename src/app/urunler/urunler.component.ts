@@ -13,7 +13,7 @@ import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 export class UrunlerComponent implements OnInit {
   modalRef: BsModalRef;
   fileUrl: string;
-  kategoriler: Kategori[];
+  kategoriler: any;
   selectedLevel: Kategori;
   urunler: Urun[];
   urunDetayShow: boolean = false;
@@ -33,7 +33,14 @@ export class UrunlerComponent implements OnInit {
   getKategori() {
     this.apiService.readKategori().subscribe((kategori: Kategori[]) => {
       this.kategoriler = kategori;
+      this.setKatLink();
       this.selectedKategori = kategori[0];
+    });
+  }
+
+  setKatLink() {
+    this.kategoriler.forEach(function (kat) {
+      kat.katLink = kat.kategoriAdi.replace(/\s/gi, '').toLowerCase();
     });
   }
 
@@ -43,6 +50,7 @@ export class UrunlerComponent implements OnInit {
       this.onkategori(this.selectedKategori);
     });
   }
+
   urunDetay(urun: Urun) {
     this.urunDetayShow = true;
     this.selectedUrun = urun;

@@ -1,8 +1,8 @@
 <div class="aboutUs" *ngFor="let about of hakimizdaList | active | slice:0:1">
  <h5>Hakkımızda</h5>
-  <p>{{about.hakimizdaText}}</p>
+  <div [innerHTML]="about.hakimizdaText"></div>
   <h5>Misyonumuz</h5>
-  <p>{{about.misyonText}}</p>
+  <div [innerHTML]="about.misyonText"></div>
   <h5>Vizyonumuz</h5>
-  <p>{{about.vizyonText}}</p>
+  <div [innerHTML]="about.vizyonText"></div>
 </div>

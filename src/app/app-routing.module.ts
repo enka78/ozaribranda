@@ -24,6 +24,7 @@ const routes: Routes = [
        children: [
            {path: 'hakkimizda', component: HakkimizdaComponent },
            {path: 'urunlerimiz', component: UrunlerComponent },
+           {path: 'urunlerimiz/:kat', component: UrunlerComponent },
            {path: 'referanslar', component: MarkalarComponent },
            {path: 'galeri', component: GaleriComponent },
            {path: 'iletisim', component: IletisimComponent},

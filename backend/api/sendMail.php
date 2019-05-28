@@ -11,18 +11,16 @@ $postdata = file_get_contents("php://input");
 
 if(isset($postdata) && !empty($postdata))
 {
-    // Extract the data.
+
     $request = json_decode($postdata);
 
+    $contactAd = $request -> contactAd;
+    $contactSoyad = $request -> contactSoyad;
+    $contactEmail = $request -> contactEmail;
+    $contactTel = $request -> contactTel;
+    $contactMesaj = $request -> contactMesaj;
 
-
-    // Sanitize.
-    $contactAd = $request->{'contactAd'};
-    $contactSoyad = $request-> {'contactSoyad'};
-    $contactEmail = $request->{'contactEmail'};
-    $contactTel = $request->{'contactTel'};
-    $contactMesaj = $request->{'contactMesaj'};
-    $icerik="<h4>İletişim Formu</h4><div style='border-top:1px #000000 solid; padding:10px;'><strong>Adı :</strong> ".$contactAd."&emsp;<strong> Soyadı :</strong>".$contactSoyad."&emsp; <strong>Telefon:</strong>".$contactTel."&emsp; <strong> Mail:</strong>".$contactEmail."<br><br> <strong>Mesaj:</strong>".$contactMesaj."</div>";
+    $icerik="<h4>Gönderen Kişinin Bilgileri</h4><div style='border-top:1px #000000 solid; padding:10px;'><strong>Adı : </strong>".$contactAd."&emsp;<strong> Soyadı : </strong>".$contactSoyad."&emsp; <strong>Telefon : </strong>".$contactTel."&emsp; <strong> Mail : </strong>".$contactEmail."<br><br> <strong>Mesaj : </strong>".$contactMesaj."</div>";
 
 
           $mail = new PHPMailer();
@@ -30,13 +28,15 @@ if(isset($postdata) && !empty($postdata))
           $mail->Host = 'mail.ozaribranda.com';
           $mail->SMTPAuth = true;
           $mail->IsHTML(true);
-          $mail->Username = 'mehmet.balarisi@ozaribranda.com';
-          $mail->Password = 'meTcam2016';
-          $mail->From="mehmet.balarisi@ozaribranda.com";
-          $mail->AddAddress('info@ozaribranda.com');
+          $mail->Username = 'info@ozaribranda.com';
+          $mail->Password = 'OAmn54U3';
+          $mail->Port     = 587;
+          $mail->From="info@ozaribranda.com";
+          $mail->Fromname = "Özarı Branda İletişim Maili";
+          $mail->AddAddress('mehmet.balarisi@ozaribranda.com');
           $mail->CharSet = 'UTF-8';
           $mail->Subject = 'Özarı Branda | İletişim Maili';
           $mail->Body = $icerik;
           $mail->Send();
-
+}
 ?>
