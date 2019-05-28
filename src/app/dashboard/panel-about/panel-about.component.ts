@@ -19,7 +19,16 @@ export class PanelAboutComponent implements OnInit {
     active: new FormControl(null, Validators.required),
     sira: new FormControl(null, Validators.required),
   });
-
+  public tools: object = {
+    items: ['Undo', 'Redo', '|',
+      'Bold', 'Italic', 'Underline', 'StrikeThrough', '|',
+      'FontName', 'FontSize', 'FontColor', 'BackgroundColor', '|',
+      'SubScript', 'SuperScript', '|',
+      'LowerCase', 'UpperCase', '|',
+      'Formats', 'Alignments', '|', 'OrderedList', 'UnorderedList', '|',
+      'Indent', 'Outdent', '|', 'CreateLink',
+      'Image', '|', 'ClearFormat', 'Print', 'SourceCode', '|', 'FullScreen']
+  };
   abouts: About[] = [];
   selectedAbout:  About = {
     id: null,
