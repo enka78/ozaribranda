@@ -18,12 +18,12 @@
         </a>
       </div>
       <div class=" d-block d-sm-none kat-mobile">
-        <select class="form-control" (change)="onChange()"   [(ngModel)]="selectedLevel">
+        <select class="form-control" (change)="onChange()"    [(ngModel)]="selectedLevel">
           <option  [ngValue]="kat" *ngFor="let kat of kategoriler">
             <a id="list-home-list"
                data-toggle="list"
                role="tab"
-               href="#list-home-{{kat.id}}"
+               [routerLink]="['/main/urunlerimiz',kat.katLink]"
                aria-controls="home">
               {{kat.kategoriAdi}}
             </a>
@@ -63,13 +63,13 @@
             <label><b>Ürün Resimleri</b></label>
           </div>
           <div class="row d-flex justify-content-around">
-            <div class="col-md-4">
+            <div class="col-md-4 mb-2">
               <a  type="button"
                   (click)="openModal(template,selectedUrun.urunPic1)">
                   <img src="{{selectedUrun.urunPic1}}" class="img-thumbnail"/>
               </a>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 mb-2">
               <a  type="button"
                   (click)="openModal(template,selectedUrun.urunPic2)">
                   <img src="{{selectedUrun.urunPic2}}" class="img-thumbnail"/>
@@ -86,7 +86,7 @@
             <label><b>Ürün Detay</b>:</label>
           </div>
           <div class="row">
-            <div [innerHTML]="selectedUrun.urunDetay"></div>
+            <div [innerHTML]="selectedUrun.urunDetay" class="col-12 p-0"></div>
           </div>
         </div>
       </div>

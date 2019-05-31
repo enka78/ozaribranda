@@ -35,6 +35,7 @@ export class UrunlerComponent implements OnInit {
       this.kategoriler = kategori;
       this.setKatLink();
       this.selectedKategori = kategori[0];
+      this.selectedLevel = kategori[0];
     });
   }
 

@@ -80,7 +80,10 @@
       }
     }
   }
-  @media  (max-width: 767px) {
+}
+@media  (max-width: 767px) {
+  .urunler{
+    padding: 20px;
     .urunContainer{
       justify-content:center;
       figure {
