@@ -5,7 +5,7 @@ import {UrunlerComponent} from './urunler/urunler.component';
 import {IletisimComponent} from './iletisim/iletisim.component';
 import {MarkalarComponent} from './markalar/markalar.component';
 import {GaleriComponent} from './galeri/galeri.component';
-import { LoginComponent } from './dashboard/login/login.component';
+import {LoginComponent} from './dashboard/login/login.component';
 import {DashMainpageComponent} from './dashboard/dash-mainpage/dash-mainpage.component';
 import {MainpageComponent} from './mainpage/mainpage.component';
 import {AuthGuard} from './guards/auth.guard';
@@ -19,16 +19,13 @@ import {PanelKategoriComponent} from './dashboard/panel-kategori/panel-kategori.
 
 
 const routes: Routes = [
-   {path: '', redirectTo: 'main', pathMatch: 'full'},
-   {path: 'main', component: MainpageComponent,
-       children: [
-           {path: 'hakkimizda', component: HakkimizdaComponent },
-           {path: 'urunlerimiz', component: UrunlerComponent },
-           {path: 'urunlerimiz/:kat', component: UrunlerComponent },
-           {path: 'referanslar', component: MarkalarComponent },
-           {path: 'galeri', component: GaleriComponent },
-           {path: 'iletisim', component: IletisimComponent},
-       ]},
+   {path: '', component: MainpageComponent, pathMatch: 'full'},
+   {path: 'hakkimizda', component: HakkimizdaComponent },
+   {path: 'urunlerimiz', component: UrunlerComponent },
+   {path: 'urunlerimiz/:kat', component: UrunlerComponent },
+   {path: 'referanslar', component: MarkalarComponent },
+   {path: 'galeri', component: GaleriComponent },
+   {path: 'iletisim', component: IletisimComponent},
    {path: 'admin', component: LoginComponent,
      children: [
        {

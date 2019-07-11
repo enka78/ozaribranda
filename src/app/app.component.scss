@@ -1,1 +1,19 @@
-
+.scroll-top{
+  position: absolute;
+  right: 130px;
+  bottom: 50px;
+  visibility: hidden;
+  height: 40px;
+  width: 40px;
+  border-radius: 20px;
+  background: #c78604;
+  color: white;
+  z-index: 4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 0px 5px 4px rgba(119, 119, 119, 0.75);
+  -moz-box-shadow: 0px 0px 5px 4px rgba(119, 119, 119, 0.75);
+  -webkit-box-shadow: 0px 0px 5px 4px rgba(119, 119, 119, 0.75);
+  cursor: pointer;
+}

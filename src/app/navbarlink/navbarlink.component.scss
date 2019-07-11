@@ -1,0 +1,24 @@
+.nav-container{
+  z-index: 3;
+  .navbar{
+    float: right;
+    border: 1px solid #c78604;
+    border-radius: 10px;
+    .navbar-nav{
+      width: 100%;
+      justify-content: space-around;
+      .nav-link{
+        padding-top: 5px;
+        padding-bottom: 5px;
+        color: black;
+        &:hover {
+          color:#c78604;
+        }
+      }
+      .active a{
+        color:#c78604;
+      }
+    }
+
+  }
+}

@@ -1,0 +1,49 @@
+.logo-container{
+  float: left;
+  width: 200px;
+  height: 120px;
+  margin-top:20px;
+  .flip-container {
+    perspective: 1000px;
+    .flipper {
+      transform-style: preserve-3d;
+      position: relative;
+      animation-duration: 3s;
+      animation-name: rotate-flipper;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+      .front, .back{
+        width: 200px;
+        height: 120px;
+        padding: 10px 20px;
+        border-radius: 10px;
+        backface-visibility: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border: 1px solid #c78604;
+        img{
+          width: 100%;
+        }
+      }
+      .front {
+        z-index: 2;
+        transform: rotateY(0deg);
+        background-color: white;
+      }
+      .back {
+        transform: rotateY(180deg);
+        background-color: black;
+      }
+      @keyframes rotate-flipper {
+        from {
+          transform: rotateY(0deg);
+        }
+
+        to {
+          transform: rotateY(180deg);
+        }
+      }
+    }
+  }
+}

@@ -8,6 +8,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainpageComponent } from './mainpage/mainpage.component';
+import { LogoComponent } from './logo/logo.component';
+import { FooterComponent } from './footer/footer.component';
+import { KatalogComponent } from './katalog/katalog.component';
+import { SosyalComponent } from './sosyal/sosyal.component';
+import { NavbarlinkComponent } from './navbarlink/navbarlink.component';
 import { SliderComponent } from './slider/slider.component';
 import { HakkimizdaComponent } from './hakkimizda/hakkimizda.component';
 import { UrunlerComponent } from './urunler/urunler.component';
@@ -43,6 +48,11 @@ import { NgtUniversalModule } from '@ng-toolkit/universal';
 @NgModule({
   declarations: [
     AppComponent,
+    LogoComponent,
+    FooterComponent,
+    KatalogComponent,
+    SosyalComponent,
+    NavbarlinkComponent,
     MainpageComponent,
     SliderComponent,
     HakkimizdaComponent,

@@ -1,54 +1,5 @@
 .main-container{
   height: 100vh;
-  .logo-container{
-    float: left;
-    width: 200px;
-    height: 120px;
-    margin-top:20px;
-    .flip-container {
-      perspective: 1000px;
-      .flipper {
-        transform-style: preserve-3d;
-        position: relative;
-        animation-duration: 3s;
-        animation-name: rotate-flipper;
-        animation-iteration-count: infinite;
-        animation-direction: alternate;
-        .front, .back{
-          width: 200px;
-          height: 120px;
-          padding: 10px 20px;
-          border-radius: 10px;
-          backface-visibility: hidden;
-          position: absolute;
-          top: 0;
-          left: 0;
-          border: 1px solid #c78604;
-          img{
-            width: 100%;
-          }
-        }
-        .front {
-          z-index: 2;
-          transform: rotateY(0deg);
-          background-color: white;
-        }
-        .back {
-          transform: rotateY(180deg);
-          background-color: black;
-        }
-        @keyframes rotate-flipper {
-          from {
-            transform: rotateY(0deg);
-          }
-
-          to {
-            transform: rotateY(180deg);
-          }
-        }
-      }
-    }
-  }
   .mobil-logo-container{
    float: left;
     width: 100%;
@@ -61,30 +12,6 @@
        }
     }
 
-  }
-  .nav-container{
-    z-index: 3;
-    .navbar{
-      float: right;
-      border: 1px solid #c78604;
-      border-radius: 10px;
-      .navbar-nav{
-        width: 100%;
-        justify-content: space-around;
-        .nav-link{
-          padding-top: 5px;
-          padding-bottom: 5px;
-          color: black;
-          &:hover {
-            color:#c78604;
-          }
-        }
-        .active a{
-          color:#c78604;
-        }
-      }
-
-    }
   }
 
   @media  (max-width: 767px) {
@@ -215,25 +142,7 @@
       z-index: 1;
     }
   }
-  .scroll-top{
-    position: absolute;
-    right: 130px;
-    bottom: 50px;
-    visibility: hidden;
-    height: 40px;
-    width: 40px;
-    border-radius: 20px;
-    background: #c78604;
-    color: white;
-    z-index: 4;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0px 0px 5px 4px rgba(119, 119, 119, 0.75);
-    -moz-box-shadow: 0px 0px 5px 4px rgba(119, 119, 119, 0.75);
-    -webkit-box-shadow: 0px 0px 5px 4px rgba(119, 119, 119, 0.75);
-    cursor: pointer;
-  }
+
 }
 @media  (max-width: 767px) {
   .main-container{
@@ -255,75 +164,10 @@
   }
 }
 
-.footer{
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-    color: black;
-    .copyright{
-      float: right;
-      font-size: 10px;
-      font-weight: bold;
-      margin-top: 30px;
-      margin-right: 30px;
-    }
-}
 
 
-.sosyal-dropdown{
-  left: 30px;
-  bottom: 20px;
-  .dropdown-menu{
-    border: none;
-    background: transparent;
-    min-width: 0;
-    width: 40px;
-  }
-  .sosial{
-    margin-bottom: 5px;
-    border-radius: 25px;
-    height: 50px;
-    display: flex !important;
-    border: 1px solid #c78604;
-    justify-content: center;
-    align-items: center;
-    background: #c78604;
-    color: white;
-    .sosyal-instagram{
-      color: #d6249f;
-    }
-    i{
-      font-size: 22px;
-      color: white;
-    }
-    &:hover{
-      background: white;
-      i{
-        color: #c78604 !important;
-      }
-    }
-  }
-  .sosial-btn{
-    border-radius: 25px;
-    background: #c78604;
-    border: 1px solid #c78604;
-    color: white;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    &::after{
-      display: none;
-    }
-    i{
-      font-size: 16px;
-    }
-    &:hover{
-      background: white;
-      color:#c78604;
-    }
-  }
-}
+
+
 .mobile-back{
   width: 100%;
   position: absolute;
