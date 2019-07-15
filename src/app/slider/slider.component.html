@@ -2,7 +2,7 @@
   <div class="carousel-inner">
     <div class="carousel-item" [ngClass]="{'active':slider.active == 1 ? true :false}" *ngFor="let slider of sliders">
         <img src="{{slider.sliderimg}}" class="d-block w-100"/>
-        <div class="carousel-caption" *ngIf="routeIsActive('/main')">
+        <div class="carousel-caption">
             <h2 class="animated fadeInUp">{{slider.sliderText1}}</h2>
             <p class="animated fadeInDown">{{slider.sliderText2}}</p>
         </div>

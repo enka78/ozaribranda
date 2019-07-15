@@ -1,7 +1,5 @@
 .carousel{
-  width: 100%;
-  z-index: -1;
-  position: absolute;
+  display: block;
   .carousel-inner{
     .carousel-item{
       img{
@@ -104,7 +102,6 @@
   .carousel {
     height: 300px;
     top: 150px;
-    z-index: 1;
     .carousel-inner {
       .carousel-item {
         .carousel-caption{

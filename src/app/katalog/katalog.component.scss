@@ -1,4 +1,6 @@
 .pdf-link{
+  display: flex;
+  justify-content: space-around;
   .pdf-container{
     float: left;
     width: 240px;
