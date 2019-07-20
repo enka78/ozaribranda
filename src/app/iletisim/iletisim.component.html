@@ -1,64 +1,69 @@
+<div class="contactPic">
+<img src="../../assets/img/contact.png" alt="">
+</div>
 <div class="contact">
-  <div class="row">
-    <h5>İletişim</h5>
-  </div>
-  <div class="row">
-    <div class="contact-form col-md-6 col-sm-12">
-      <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
-        <div class="form-row">
-          <div class="form-group col-md-6">
-            <label >Ad</label>
-            <input type="text" formControlName="contactAd" class="form-control" placeholder="Adınız..." >
+  <div class="contactMain">
+    <div class="row">
+      <h5>İletişim</h5>
+    </div>
+    <div class="row">
+      <div class="contact-form col-md-6 col-sm-12">
+        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label >Ad</label>
+              <input type="text" formControlName="contactAd" class="form-control" placeholder="Adınız..." >
+            </div>
+            <div class="form-group col-md-6">
+              <label>Soyad</label>
+              <input type="text" formControlName="contactSoyad" class="form-control"  placeholder="Soyadınız">
+            </div>
           </div>
-          <div class="form-group col-md-6">
-            <label>Soyad</label>
-            <input type="text" formControlName="contactSoyad" class="form-control"  placeholder="Soyadınız">
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label>Email</label>
+              <input type="email" formControlName="contactEmail" class="form-control"  placeholder="Email Adresiniz...">
+            </div>
+            <div class="form-group col-md-6">
+              <label>Tel</label>
+              <input type="text" formControlName="contactTel" class="form-control" placeholder="Telefon Numaranız...">
+            </div>
           </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group col-md-6">
-            <label>Email</label>
-            <input type="email" formControlName="contactEmail" class="form-control"  placeholder="Email Adresiniz...">
+          <div class="form-row">
+            <div class="form-group col-md-12">
+              <label >Mesaj</label>
+              <textarea class="form-control" formControlName="contactMesaj"  rows="3" placeholder="Mesajınız..."></textarea>
+            </div>
           </div>
-          <div class="form-group col-md-6">
-            <label>Tel</label>
-            <input type="text" formControlName="contactTel" class="form-control" placeholder="Telefon Numaranız...">
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group col-md-12">
-            <label >Mesaj</label>
-            <textarea class="form-control" formControlName="contactMesaj"  rows="3" placeholder="Mesajınız..."></textarea>
-          </div>
-        </div>
-        <button type="submit" [disabled]="!contactForm.valid" class="btn btn-warning btn-block">
+          <button type="submit" [disabled]="!contactForm.valid" class="btn btn-warning btn-block">
             <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true" *ngIf="loading"></span>
             <span *ngIf="loading">Mesajınız Gönderiliyor...</span>
             <span *ngIf="!loading">Gönder</span>
-        </button>
-      </form>
-    </div>
-    <div class="contact-map col-md-6 col-sm-12">
-      <agm-map [zoom]="12" [latitude]="location.lat" [longitude]="location.lng">
-        <agm-marker [latitude]="location.lat" [longitude]="location.lng">
-          <agm-snazzy-info-window [maxWidth]="200" [isOpen]=true>
-            <ng-template>
-              <img src="../../assets/img/logo-light.png" width="135">
-              <strong>Adres :</strong>
-              <p>Vefa Katip Çelebi Cad.</p>
-              <p>Muabbir Sok. No:4</p>
-              <p>34470 Unkapanı / İstanbul</p>
-              <span>Cep:</span>
-              <p>(0532) 372 78 60</p>
-              <span>Tel:</span>
-              <p>(0212) 513 04 07</p>
-              <span>Fax:</span>
-              <p>(0212) 522 45 16</p>
-              <p>(İ.M.Ç. 1 ve 2. Blok Arası Kat Otopark Önü)</p>
-            </ng-template>
-          </agm-snazzy-info-window>
-        </agm-marker>
-      </agm-map>
+          </button>
+        </form>
+      </div>
+      <div class="contact-map col-md-6 col-sm-12">
+        <agm-map [zoom]="12" [latitude]="location.lat" [longitude]="location.lng">
+          <agm-marker [latitude]="location.lat" [longitude]="location.lng">
+            <agm-snazzy-info-window [maxWidth]="200" [isOpen]=true>
+              <ng-template>
+                <img src="../../assets/img/logo-light.png" width="135">
+                <strong>Adres :</strong>
+                <p>Vefa Katip Çelebi Cad.</p>
+                <p>Muabbir Sok. No:4</p>
+                <p>34470 Unkapanı / İstanbul</p>
+                <span>Cep:</span>
+                <p>(0532) 372 78 60</p>
+                <span>Tel:</span>
+                <p>(0212) 513 04 07</p>
+                <span>Fax:</span>
+                <p>(0212) 522 45 16</p>
+                <p>(İ.M.Ç. 1 ve 2. Blok Arası Kat Otopark Önü)</p>
+              </ng-template>
+            </agm-snazzy-info-window>
+          </agm-marker>
+        </agm-map>
+      </div>
     </div>
   </div>
 </div>

@@ -21,11 +21,10 @@ import {PanelKategoriComponent} from './dashboard/panel-kategori/panel-kategori.
 const routes: Routes = [
    {path: '', component: MainpageComponent, pathMatch: 'full'},
    {path: 'hakkimizda', component: HakkimizdaComponent },
-   {path: 'urunlerimiz', component: UrunlerComponent },
-   {path: 'urunlerimiz/:kat', component: UrunlerComponent },
    {path: 'referanslar', component: MarkalarComponent },
    {path: 'galeri', component: GaleriComponent },
    {path: 'iletisim', component: IletisimComponent},
+   {path: ':kat', component: UrunlerComponent, pathMatch: 'full'},
    {path: 'admin', component: LoginComponent,
      children: [
        {

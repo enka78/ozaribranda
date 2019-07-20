@@ -1,6 +1,10 @@
+<div class="galeriPic">
+  <img src="../../assets/img/galeri.png" alt="">
+</div>
 <div class="galeri">
-  <h5>Galeri</h5>
-  <div class="galeriContainer">
+  <div class="galeriMain">
+    <h5>Galeri</h5>
+    <div class="galeriContainer">
       <figure *ngFor="let gal of galeri">
         <div class="galeriBox">
           <a  type="button"
@@ -12,6 +16,7 @@
           </figcaption>
         </div>
       </figure>
+    </div>
   </div>
 </div>
 <ng-template #template>

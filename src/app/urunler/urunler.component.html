@@ -1,92 +1,97 @@
+<div class="urunlerPic">
+  <img src="../../assets/img/urunler.png" alt="">
+</div>
 <div class="urunler">
-  <h5>Ürünlerimiz</h5>
-  <div class="row">
-    <div class="urunlerMenu col-md-3">
-      <h6>Kategoriler</h6>
-      <div class="list-group list-group-flush d-none d-sm-block" id="list-tab" role="tablist">
-        <a  *ngFor="let kat of kategoriler"
-            [ngClass]="{'active':kat.id == 1 ? true :false}"
-           class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
-           id="list-home-list"
-           data-toggle="list"
-           [routerLink]="['/main/urunlerimiz',kat.katLink]"
-           role="tab"
-           (click)="onkategori(kat)"
-           aria-controls="home">
-          {{kat.kategoriAdi}}
-          <i class="fa fa-angle-right fa-lg"></i>
-        </a>
-      </div>
-      <div class=" d-block d-sm-none kat-mobile">
-        <select class="form-control" (change)="onChange()"    [(ngModel)]="selectedLevel">
-          <option  [ngValue]="kat" *ngFor="let kat of kategoriler">
-            <a id="list-home-list"
-               data-toggle="list"
-               role="tab"
-               [routerLink]="['/main/urunlerimiz',kat.katLink]"
-               aria-controls="home">
-              {{kat.kategoriAdi}}
-            </a>
-          </option>
-        </select>
-      </div>
-    </div>
-    <div class="urunlerDetay col-md-9">
-      <div class="tab-content" id="nav-tabContent">
-        <div *ngIf="!urunDetayShow">
-          <div class="tab-pane fade show"
-                id="list-home-{{this.selectedKategori.id}}"
-                role="tabpanel"
-                aria-labelledby="list-home-list">
-            <h6>{{this.selectedKategori.kategoriAdi}}</h6>
-            <div class="urunContainer">
-              <figure *ngFor="let urun of this.selectedUrunler">
-                <div class="urunBox">
-                  <a (click)="urunDetay(urun)" type="button"  data-toggle="modal" data-target="#exampleModalCenter">
-                    <img src="{{urun.urunPic1}}" class="img-fluid" alt="sunberella"/>
-                  </a>
-                  <figcaption>
-                    <span>{{urun.urunAdi}}</span>
-                  </figcaption>
-                </div>
-              </figure>
-            </div>
-          </div>
+  <div class="urunlerMain">
+    <h5>Ürünlerimiz</h5>
+    <div class="row">
+      <div class="urunlerMenu col-md-3">
+        <h6>Kategoriler</h6>
+        <div class="list-group list-group-flush d-none d-sm-block" id="list-tab" role="tablist">
+          <a  *ngFor="let kat of kategoriler"
+              [ngClass]="{'active':kat.id == 1 ? true :false}"
+              class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
+              id="list-home-list"
+              data-toggle="list"
+              [routerLink]="['/',kat.katLink]"
+              role="tab"
+              (click)="onkategori(kat)"
+              aria-controls="home">
+            {{kat.kategoriAdi}}
+            <i class="fa fa-angle-right fa-lg"></i>
+          </a>
         </div>
-        <div class="container-fluid urun-detay" *ngIf="urunDetayShow">
-          <h6>Ürün Detayı</h6>
-          <div class="row urun-adı">
-            <label><b>Ürün Adı</b> : </label>
-            <span>{{selectedUrun.urunAdi}}</span>
+        <div class=" d-block d-sm-none kat-mobile">
+          <select class="form-control" (change)="onChange()"    [(ngModel)]="selectedLevel">
+            <option  [ngValue]="kat" *ngFor="let kat of kategoriler">
+              <a id="list-home-list"
+                 data-toggle="list"
+                 role="tab"
+                 [routerLink]="['/',kat.katLink]"
+                 aria-controls="home">
+                {{kat.kategoriAdi}}
+              </a>
+            </option>
+          </select>
+        </div>
+      </div>
+      <div class="urunlerDetay col-md-9">
+        <div class="tab-content" id="nav-tabContent">
+          <div *ngIf="!urunDetayShow">
+            <div class="tab-pane fade show"
+                 id="list-home-{{this.selectedKategori.id}}"
+                 role="tabpanel"
+                 aria-labelledby="list-home-list">
+              <h6>{{this.selectedKategori.kategoriAdi}}</h6>
+              <div class="urunContainer">
+                <figure *ngFor="let urun of this.selectedUrunler">
+                  <div class="urunBox">
+                    <a (click)="urunDetay(urun)" type="button"  data-toggle="modal" data-target="#exampleModalCenter">
+                      <img src="{{urun.urunPic1}}" class="img-fluid" alt="sunberella"/>
+                    </a>
+                    <figcaption>
+                      <span>{{urun.urunAdi}}</span>
+                    </figcaption>
+                  </div>
+                </figure>
+              </div>
+            </div>
           </div>
-          <div class="row urun-resim">
-            <label><b>Ürün Resimleri</b></label>
-          </div>
-          <div class="row d-flex justify-content-around">
-            <div class="col-md-4 mb-2">
-              <a  type="button"
-                  (click)="openModal(template,selectedUrun.urunPic1)">
+          <div class="container-fluid urun-detay" *ngIf="urunDetayShow">
+            <h6>Ürün Detayı</h6>
+            <div class="row urun-adı">
+              <label><b>Ürün Adı</b> : </label>
+              <span>{{selectedUrun.urunAdi}}</span>
+            </div>
+            <div class="row urun-resim">
+              <label><b>Ürün Resimleri</b></label>
+            </div>
+            <div class="row d-flex justify-content-around">
+              <div class="col-md-4 mb-2">
+                <a  type="button"
+                    (click)="openModal(template,selectedUrun.urunPic1)">
                   <img src="{{selectedUrun.urunPic1}}" class="img-thumbnail"/>
-              </a>
-            </div>
-            <div class="col-md-4 mb-2">
-              <a  type="button"
-                  (click)="openModal(template,selectedUrun.urunPic2)">
+                </a>
+              </div>
+              <div class="col-md-4 mb-2">
+                <a  type="button"
+                    (click)="openModal(template,selectedUrun.urunPic2)">
                   <img src="{{selectedUrun.urunPic2}}" class="img-thumbnail"/>
-              </a>
-            </div>
-            <div class="col-md-4">
-              <a  type="button"
-                  (click)="openModal(template,selectedUrun.urunPic3)">
+                </a>
+              </div>
+              <div class="col-md-4">
+                <a  type="button"
+                    (click)="openModal(template,selectedUrun.urunPic3)">
                   <img src="{{selectedUrun.urunPic3}}" class="img-thumbnail"/>
-              </a>
+                </a>
+              </div>
             </div>
-          </div>
-          <div class="row urun-aciklama">
-            <label><b>Ürün Detay</b>:</label>
-          </div>
-          <div class="row">
-            <div [innerHTML]="selectedUrun.urunDetay" class="col-12 p-0"></div>
+            <div class="row urun-aciklama">
+              <label><b>Ürün Detay</b>:</label>
+            </div>
+            <div class="row">
+              <div [innerHTML]="selectedUrun.urunDetay" class="col-12 p-0"></div>
+            </div>
           </div>
         </div>
       </div>

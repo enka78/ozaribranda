@@ -1,8 +1,13 @@
+<div class="aboutUsPic">
+    <img src="../../assets/img/about.png" alt="">
+</div>
 <div class="aboutUs" *ngFor="let about of hakimizdaList | active | slice:0:1">
- <h5>Hakkımızda</h5>
-  <div [innerHTML]="about.hakimizdaText"></div>
-  <h5>Misyonumuz</h5>
-  <div [innerHTML]="about.misyonText"></div>
-  <h5>Vizyonumuz</h5>
-  <div [innerHTML]="about.vizyonText"></div>
+  <div class="about-container">
+    <h5>Hakkımızda</h5>
+    <div [innerHTML]="about.hakimizdaText"></div>
+    <h5>Misyonumuz</h5>
+    <div [innerHTML]="about.misyonText"></div>
+    <h5>Vizyonumuz</h5>
+    <div [innerHTML]="about.vizyonText"></div>
+  </div>
 </div>

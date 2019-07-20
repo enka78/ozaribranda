@@ -1,4 +1,8 @@
 #logincontainer{
+  position: absolute;
+  width: 100%;
+  background-color: #e0dfdf;
+  z-index: 60;
   .container{
     .row{
       margin: 20px 0;

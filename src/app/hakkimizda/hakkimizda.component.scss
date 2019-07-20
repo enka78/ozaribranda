@@ -1,13 +1,25 @@
 .aboutUs{
-  width: 100%;
-  border-radius: 10px;
-  padding: 30px;
-  color: black;
-  border: 1px solid #c78604;
-  background-color: rgba(255, 255, 255, 0.71);
-  h5{
-    border-bottom: 1px solid #ffc107;
-    padding-bottom: 10px;
+  position: absolute;
+  top:230px;
+  z-index: 30;
+  padding: 50px;
+  .about-container{
+    border-radius: 10px;
+    color: black;
+    padding: 30px;
+    border: 1px solid #c78604;
+    background-color: rgba(255, 255, 255, 0.71);
+    h5{
+      border-bottom: 1px solid #ffc107;
+      padding-bottom: 10px;
+    }
+  }
+}
+.aboutUsPic{
+  position: absolute;
+  z-index: 30;
+  img{
+    width: 100%;
   }
 }
 

@@ -1,6 +1,4 @@
-<div class="logo-container">
-  <app-logo></app-logo>
-</div>
+
 <div class="slider-container">
   <app-slider></app-slider>
 </div>
@@ -11,42 +9,6 @@
   <app-sosyal></app-sosyal>
 </div>
 
-<!--<div class="container-fluid" *ngIf="routeIsActive('/main')">-->
-  <!--<div class="row">-->
-    <!---->
-  <!--</div>-->
-<!--</div>-->
-<!--<div class="container-fluid d-none d-sm-block" *ngIf="routeIsActive('/main/hakkimizda')">-->
-  <!--<div class="row">-->
-    <!--<div class="page-image">-->
-      <!--<img src="../../assets/img/about.png" alt="">-->
-    <!--</div>-->
-  <!--</div>-->
-<!--</div>-->
-<!--<div class="container-fluid d-none d-sm-block" *ngIf="routeIsActive('/main/urunlerimiz')">-->
-    <!--<div class="page-image">-->
-        <!--<img src="../../assets/img/urunler.png" alt="">-->
-    <!--</div>-->
-<!--</div>-->
-<!--<div class="container-fluid d-none d-sm-block" *ngIf="routeIsActive('/main/referanslar')">-->
-  <!--<div class="row">-->
-    <!--<div class="page-image">-->
-      <!--<img src="../../assets/img/marka.png" alt="">-->
-    <!--</div>-->
-  <!--</div>-->
-<!--</div>-->
-<!--<div class="container-fluid d-none d-sm-block" *ngIf="routeIsActive('/main/galeri')">-->
-  <!--<div class="row">-->
-    <!--<div class="page-image">-->
-      <!--<img src="../../assets/img/galeri.png" alt="">-->
-    <!--</div>-->
-  <!--</div>-->
-<!--</div>-->
-<!--<div class="container-fluid d-none d-sm-block" *ngIf="routeIsActive('/main/iletisim')">-->
-  <!--<div class="page-image">-->
-    <!--<img src="../../assets/img/contact.png" alt="">-->
-  <!--</div>-->
-<!--</div>-->
 <!--<div class="container-fluid">-->
   <!--<div class="row">-->
     <!--<div class="container main-container col-md-12 px-md-5 px-sm-3" [ngStyle]="{'background-color': routeIsActive('/main') ? '' : '#afafaf61'}" [ngClass]="lightStatus ? 'main-container' : 'main-container-dark'">-->
@@ -62,85 +24,7 @@
                 <!--</div>-->
             <!--</div>-->
         <!--</div>-->
-      <!--&lt;!&ndash; katalog &ndash;&gt;-->
-        <!--<div class="row">-->
-            <!--<div #scrollEl (scroll)="onScroll($event)"  class="container-fluid pages-container px-md-5 px-sm-3 d-flex flex-column justify-content-between">-->
-                <!--<div>-->
-                    <!--<router-outlet></router-outlet>-->
-                <!--</div>-->
-                <!---->
-                <!--<div class="pdf-link container-fluid d-flex flex-column align-items-center justify-content-center pdf-mobile" *ngIf="routeIsActive('/main')">-->
-                    <!--<div class="col-xs-12 my-2 d-flex justify-content-center">-->
-                        <!--<div class="pdf-container">-->
-                            <!--<a href="../../assets/pdf/ekatalog.pdf"-->
-                               <!--target="_blank"-->
-                               <!--data-toggle="tooltip"-->
-                               <!--data-placement="top"-->
-                               <!--title="Özarı Branda Kataloğu">-->
-                                <!--<div class="pdf-text">-->
-                                    <!--<span>Özarı Branda Ürün Kataloğu</span>-->
-                                <!--</div>-->
-                                <!--<div class="pdf-icon">-->
-                                    <!--<i class="fa fa-file-pdf-o fa-2x" aria-hidden="true"></i>-->
-                                <!--</div>-->
-                            <!--</a>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                    <!--<div class="col-xs-12 my-2 d-flex justify-content-center">-->
-                        <!--<div class="pdf-container dick-back-img">-->
-                            <!--<a href="../../assets/pdf/DicksonKatalog.pdf"-->
-                               <!--target="_blank"-->
-                               <!--data-toggle="tooltip"-->
-                               <!--data-placement="top"-->
-                               <!--title="Dickson Ürün Kataloğu">-->
-                                <!--<div class="pdf-text">-->
-                                    <!--<span>Dickson Ürün Kataloğu</span>-->
-                                <!--</div>-->
-                                <!--<div class="pdf-icon">-->
-                                    <!--<i class="fa fa-file-pdf-o fa-2x" aria-hidden="true"></i>-->
-                                <!--</div>-->
-                            <!--</a>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                    <!--<div class="col-xs-12 my-2 d-flex justify-content-center">-->
 
-                        <!--<div class="pdf-container sub-back-img">-->
-                            <!--<a href="../../assets/pdf/SUNBRELLA.pdf"-->
-                               <!--target="_blank"-->
-                               <!--data-toggle="tooltip"-->
-                               <!--data-placement="top"-->
-                               <!--title="Sunbrella Ürün Kataloğu">-->
-                                <!--<div class="pdf-text">-->
-                                    <!--<span>Sunbrella Ürün Kataloğu</span>-->
-                                <!--</div>-->
-                                <!--<div class="pdf-icon">-->
-                                    <!--<i class="fa fa-file-pdf-o fa-2x" aria-hidden="true"></i>-->
-                                <!--</div>-->
-                            <!--</a>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</div>-->
-            <!--</div>-->
-            <!--<div #scrollTop class="scroll-top">-->
-                <!--<a (click)="onScrollTop()">-->
-                    <!--<i class="fa fa-chevron-up"></i>-->
-                <!--</a>-->
-            <!--</div>-->
-        <!--</div>-->
-    <!--</div>-->
-  <!--</div>-->
 
-<!--</div>-->
-<!--&lt;!&ndash; footer &ndash;&gt;-->
-<!--<div class="container-fluid fixed-bottom">-->
-  <!--<div class="row">-->
 
-  <!--</div>-->
-<!--</div>-->
-<!--&lt;!&ndash;sosial &ndash;&gt;-->
-<!--<div class="container-fluid fixed-bottom">-->
-  <!--<div class="row" *ngIf="routeIsActive('/main')">-->
-
-  <!--</div>-->
-<!--</div>-->
 
