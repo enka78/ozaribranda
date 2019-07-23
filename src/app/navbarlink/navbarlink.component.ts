@@ -6,10 +6,13 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./navbarlink.component.scss']
 })
 export class NavbarlinkComponent implements OnInit {
-
+  lightStatus: boolean = true;
   constructor() { }
 
   ngOnInit() {
+  }
+  lightChange() {
+    this.lightStatus = !this.lightStatus;
   }
 
 }

@@ -10,7 +10,6 @@ import {Router} from '@angular/router';
 export class MainpageComponent implements OnInit {
   @ViewChild('scrollTop') scrollElm: ElementRef;
   @ViewChild('scrollEl') scrollElment: ElementRef;
-  lightStatus: boolean = true;
   constructor(private router: Router,  private renderer: Renderer2) { }
 
   ngOnInit() {
@@ -20,9 +19,6 @@ export class MainpageComponent implements OnInit {
     return this.router.url === routePath;
   }
 
-  lightChange() {
-    this.lightStatus = !this.lightStatus;
-  }
 
     onScroll($event) {
       if ($event.srcElement.scrollTop > 200) {
