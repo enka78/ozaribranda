@@ -1,18 +1,18 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, ElementRef} from '@angular/core';
 
 @Component({
   selector: 'app-navbarlink',
   templateUrl: './navbarlink.component.html',
   styleUrls: ['./navbarlink.component.scss']
 })
-export class NavbarlinkComponent implements OnInit {
+export class NavbarlinkComponent {
   lightStatus: boolean = true;
-  constructor() { }
+  constructor(private elementRef: ElementRef) { }
 
-  ngOnInit() {
-  }
+
   lightChange() {
     this.lightStatus = !this.lightStatus;
+    this.elementRef.nativeElement.ownerDocument.body.style.backgroundColor = this.lightStatus ? 'white' : 'black';
   }
 
 }

@@ -100,16 +100,14 @@
 }
 @media  (max-width: 767px) {
   .carousel {
-    height: 300px;
-    top: 150px;
     .carousel-inner {
       .carousel-item {
         .carousel-caption{
           height: 150px;
           text-shadow: none;
-          top: 30px;
           width: 100%;
           left: 0;
+          bottom: 100px;
           h2{
             font-size: 30px;
             font-weight: bold;
@@ -118,10 +116,6 @@
             font-size: 28px;
             font-weight: bold;
           }
-        }
-        img {
-          width: auto;
-          height: auto;
         }
       }
     }

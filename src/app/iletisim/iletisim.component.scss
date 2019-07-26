@@ -40,3 +40,12 @@
     width: 100%;
   }
 }
+@media  (max-width: 767px) {
+  .contact{
+    top:100px;
+    padding: 15px;
+  }
+  .contactPic{
+    display: none;
+  }
+}

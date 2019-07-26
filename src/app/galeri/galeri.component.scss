@@ -86,3 +86,12 @@
     width: 100%;
   }
 }
+@media  (max-width: 767px) {
+  .galeri{
+    top:100px;
+    padding: 15px;
+  }
+  .galeriPic{
+    display: none;
+  }
+}

@@ -23,3 +23,12 @@
   }
 }
 
+@media  (max-width: 767px) {
+  .aboutUs{
+    top:100px;
+    padding: 15px;
+  }
+  .aboutUsPic{
+    display: none;
+  }
+}

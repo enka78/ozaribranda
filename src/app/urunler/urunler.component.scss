@@ -114,3 +114,12 @@
     width: 100%;
   }
 }
+@media  (max-width: 767px) {
+  .urunler{
+    top:100px;
+    padding: 15px;
+  }
+  .urunlerPic{
+    display: none;
+  }
+}

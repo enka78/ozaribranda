@@ -52,3 +52,22 @@
     background: url("../../assets/img/dick-back.png") no-repeat  center center transparent;
   }
 }
+
+@media  (max-width: 767px) {
+  .pdf-link {
+    .pdf-container{
+      margin-right: 5px;
+      a{
+        .pdf-text{
+          span{
+            font-size: 12px;
+          }
+        }
+        .pdf-icon{
+          height: 32px;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}

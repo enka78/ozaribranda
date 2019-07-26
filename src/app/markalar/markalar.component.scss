@@ -70,3 +70,12 @@
     width: 100%;
   }
 }
+@media  (max-width: 767px) {
+  .marka{
+    top:100px;
+    padding: 15px;
+  }
+  .markaPic{
+    display: none;
+  }
+}
