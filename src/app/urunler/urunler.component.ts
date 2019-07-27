@@ -60,6 +60,7 @@ export class UrunlerComponent implements OnInit {
     this.selectedKategori = kat;
     this.urunDetayShow = false;
     this.selectedUrunler = this.urunler.filter(x => x.katid === kat.id);
+    window.scrollTo({ left: 0, top: 0, behavior: 'smooth' });
   }
 
   onChange () {

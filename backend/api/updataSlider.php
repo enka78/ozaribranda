@@ -19,11 +19,12 @@ if(isset($postdata) && !empty($postdata))
     $sliderText1 = mysqli_real_escape_string($con, trim($request->sliderText1));
     $sliderText2 = mysqli_real_escape_string($con, trim($request->sliderText2));
     $sliderimg = mysqli_real_escape_string($con, trim($request->sliderimg));
+    $sliderMobil = mysqli_real_escape_string($con, trim($request->sliderMobil));
     $active = mysqli_real_escape_string($con, (int)$request->active);
     $sira = mysqli_real_escape_string($con, (int)$request->sira);
 
     // Update.
-    $sql = "UPDATE `slider` SET `sliderText1`='$sliderText1',`sliderText2`='$sliderText2',`sliderimg`='$sliderimg',`active`='$active',`sira`='$sira' WHERE `id` = '{$id}' LIMIT 1";
+    $sql = "UPDATE `slider` SET `sliderText1`='$sliderText1',`sliderText2`='$sliderText2',`sliderimg`='$sliderimg', `sliderMobil`='$sliderMobil',`active`='$active',`sira`='$sira' WHERE `id` = '{$id}' LIMIT 1";
 
     if(mysqli_query($con, $sql))
     {

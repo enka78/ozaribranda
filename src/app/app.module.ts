@@ -41,6 +41,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { CommonModule } from '@angular/common';
 import { TransferHttpCacheModule } from '@nguniversal/common';
 import { NgtUniversalModule } from '@ng-toolkit/universal';
+import {ApplicationStateService} from './services/application-state.service';
 
 
 
@@ -91,7 +92,7 @@ import { NgtUniversalModule } from '@ng-toolkit/universal';
         TransferHttpCacheModule,
         NgtUniversalModule
     ],
-  providers: [UserService, AuthGuard],
+  providers: [UserService, AuthGuard, ApplicationStateService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

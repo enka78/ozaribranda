@@ -20,6 +20,10 @@
           <app-file-upload  (fileUrl)="getFileUrl($event)"></app-file-upload>
         </div>
         <div class="form-group">
+          <label>Slider Mobil Resim (450 X 850)</label>
+          <app-file-upload  (fileUrl)="getFileUrl($event)"></app-file-upload>
+        </div>
+        <div class="form-group">
           <label for="exampleFormControlSelect1">Aktif / Pasif</label>
           <select formControlName="active" class="form-control" id="exampleFormControlSelect1" required>
             <option value="1">Aktif</option>
@@ -84,6 +88,5 @@
     </button>
   </div>
   <div class="toast-body">
-    Hello, world! This is a toast message.
   </div>
 </div>

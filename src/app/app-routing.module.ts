@@ -24,7 +24,6 @@ const routes: Routes = [
    {path: 'referanslar', component: MarkalarComponent },
    {path: 'galeri', component: GaleriComponent },
    {path: 'iletisim', component: IletisimComponent},
-   {path: ':kat', component: UrunlerComponent, pathMatch: 'full'},
    {path: 'admin', component: LoginComponent,
      children: [
        {
@@ -41,7 +40,8 @@ const routes: Routes = [
                 ]
        }
      ]
-   }
+   },
+  {path: ':kat', component: UrunlerComponent, pathMatch: 'full'}
 ];
 
 @NgModule({

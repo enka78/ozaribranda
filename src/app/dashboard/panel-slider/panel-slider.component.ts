@@ -16,23 +16,28 @@ export class PanelSliderComponent implements OnInit {
     sliderText1: new FormControl('', Validators.required),
     sliderText2: new FormControl('', Validators.required),
     sliderimg: new FormControl('', Validators.required),
+    sliderMobil: new FormControl('', Validators.required),
     active: new FormControl(null, Validators.required),
     sira: new FormControl(null, Validators.required),
   });
 
   sliders: Slider[];
-  selectedSlider:  Slider  = { id :  null , sliderText1: '' , sliderText2: '', sliderimg: '' , active : null, sira : null };
+  selectedSlider:  Slider  = { id :  null , sliderText1: '' , sliderText2: '', sliderimg: '', sliderMobil: '', active : null, sira : null };
 
   constructor(private apiservice: ApiService, private toastr: ToastrService) { }
 
   ngOnInit() {
     this.getSliders();
   }
-
+  counterimg: number = 1;
   public getFileUrl(url): void {
-    this.sliderForm.controls['sliderimg'].setValue(url);
+    if (this.counterimg === 1) {
+      this.sliderForm.controls['sliderimg'].setValue(url);
+    } else {
+      this.sliderForm.controls['sliderMobil'].setValue(url);
+    }
+    this.counterimg++;
   }
-
   getSliders() {
     this.apiservice.readSliders().subscribe((slider: Slider[]) => {
       this.sliders = slider;
@@ -66,7 +71,7 @@ export class PanelSliderComponent implements OnInit {
     this.sliderForm.setValue(slider);
   }
   emptySelected( ) {
-    this.selectedSlider = { id :  null , sliderText1: '' , sliderText2: '', sliderimg: '' , active : null, sira : null };
+    this.selectedSlider = { id :  null , sliderText1: '' , sliderText2: '', sliderimg: '', sliderMobil: '', active : null, sira : null };
   }
 
   delete(id) {

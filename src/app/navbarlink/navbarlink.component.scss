@@ -31,7 +31,8 @@
     .navbar{
       width: 100%;
       padding: 10px;
-      button{
+      & > button{
+        width: 80%;
         img{
           width: 80px;
         }

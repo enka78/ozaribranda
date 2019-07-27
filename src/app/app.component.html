@@ -1,13 +1,18 @@
-<div class="logo-container d-none d-sm-block">
-  <app-logo></app-logo>
-</div>
-<div class="roof-container">
-  <router-outlet></router-outlet>
-</div>
-<div class="navigasyon-container">
+ <div class="logo-container d-none d-sm-block">
+    <app-logo></app-logo>
+  </div>
+  <div class="roof-container">
+    <router-outlet></router-outlet>
+  </div>
+  <div class="navigasyon-container">
     <app-navbarlink></app-navbarlink>
-</div>
-<div class="footer-container">
-  <app-footer></app-footer>
-</div>
+  </div>
+  <div class="footer-container">
+    <app-footer></app-footer>
+  </div>
+  <div #scrollTop class="scroll-top">
+    <a (click)="onScrollTop()">
+      <i class="fa fa-chevron-up"></i>
+    </a>
+  </div>
 

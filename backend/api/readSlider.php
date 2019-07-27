@@ -17,6 +17,7 @@ if($result = mysqli_query($con,$sql))
         $sliders[$i]['sliderText1'] = $row['sliderText1'];
         $sliders[$i]['sliderText2'] = $row['sliderText2'];
         $sliders[$i]['sliderimg'] = $row['sliderimg'];
+        $sliders[$i]['sliderMobil'] = $row['sliderMobil'];
         $sliders[$i]['active'] = $row['active'];
         $sliders[$i]['sira'] = $row['sira'];
         $i++;
