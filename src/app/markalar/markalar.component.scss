@@ -46,6 +46,9 @@
             width: 200px;
             height: 150px;
             overflow: hidden;
+            box-shadow: none;
+            -webkit-box-shadow: none;
+            -moz-box-shadow:    none;
             img{
               width: 100%;
             }
