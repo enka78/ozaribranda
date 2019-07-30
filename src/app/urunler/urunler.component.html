@@ -44,16 +44,16 @@
                  aria-labelledby="list-home-list">
               <h6>{{this.selectedKategori.kategoriAdi}}</h6>
               <div class="urunContainer">
-                <figure *ngFor="let urun of this.selectedUrunler">
+                <div *ngFor="let urun of this.selectedUrunler">
                   <div class="urunBox">
-                    <a (click)="urunDetay(urun)" type="button"  data-toggle="modal" data-target="#exampleModalCenter">
+                    <a (click)="urunDetay(urun)"   data-toggle="modal" data-target="#exampleModalCenter">
                       <img src="{{urun.urunPic1}}" class="img-fluid" alt="sunberella"/>
                     </a>
-                    <figcaption>
+                    <div>
                       <span>{{urun.urunAdi}}</span>
-                    </figcaption>
+                    </div>
                   </div>
-                </figure>
+                </div>
               </div>
             </div>
           </div>
@@ -68,20 +68,17 @@
             </div>
             <div class="row d-flex justify-content-around">
               <div class="col-md-4 mb-2">
-                <a  type="button"
-                    (click)="openModal(template,selectedUrun.urunPic1)">
+                <a (click)="openModal(template,selectedUrun.urunPic1)">
                   <img src="{{selectedUrun.urunPic1}}" class="img-thumbnail"/>
                 </a>
               </div>
               <div class="col-md-4 mb-2">
-                <a  type="button"
-                    (click)="openModal(template,selectedUrun.urunPic2)">
+                <a (click)="openModal(template,selectedUrun.urunPic2)">
                   <img src="{{selectedUrun.urunPic2}}" class="img-thumbnail"/>
                 </a>
               </div>
               <div class="col-md-4">
-                <a  type="button"
-                    (click)="openModal(template,selectedUrun.urunPic3)">
+                <a (click)="openModal(template,selectedUrun.urunPic3)">
                   <img src="{{selectedUrun.urunPic3}}" class="img-thumbnail"/>
                 </a>
               </div>

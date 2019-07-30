@@ -7,8 +7,7 @@
     <div class="galeriContainer">
       <figure *ngFor="let gal of galeri">
         <div class="galeriBox">
-          <a  type="button"
-              (click)="openModal(template,gal)">
+          <a (click)="openModal(template,gal)">
             <img id="myImg" src="{{gal.galeriPic}}" class="img-fluid" alt="{{gal.galeriText}}"/>
           </a>
           <figcaption>
