@@ -5,16 +5,16 @@
   <div class="markaMain">
     <h5>Referanslar</h5>
     <div class="markaContainer">
-      <figure *ngFor="let mar of markalar">
+      <div class="urunBoxCont" *ngFor="let mar of markalar">
         <div class="markaBox">
           <a  data-toggle="modal" data-target="#exampleModalCenter">
             <img src="{{mar.markaPic}}" class="img-fluid" alt="{{mar.markaText}}"/>
           </a>
-          <figcaption>
+          <div class="urunBoxText">
             <span>{{mar.markaText}}</span>
-          </figcaption>
+          </div>
         </div>
-      </figure>
+      </div>
     </div>
   </div>
 </div>

@@ -20,6 +20,9 @@ if($result = mysqli_query($con,$sql))
         $urunler[$i]['urunPic2'] = $row['urunPic2'];
         $urunler[$i]['urunPic3'] = $row['urunPic3'];
         $urunler[$i]['urunDetay'] = $row['urunDetay'];
+        $urunler[$i]['metaTitle'] = $row['metaTitle'];
+        $urunler[$i]['metaDescription'] = $row['metaDescription'];
+        $urunler[$i]['metaKeywords'] = $row['metaKeywords'];
         $urunler[$i]['active'] = $row['active'];
         $urunler[$i]['sira'] = $row['sira'];
         $i++;

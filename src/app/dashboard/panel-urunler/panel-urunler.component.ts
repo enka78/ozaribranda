@@ -21,6 +21,9 @@ export class PanelUrunlerComponent implements OnInit {
     urunPic2: new FormControl(''),
     urunPic3: new FormControl(''),
     urunDetay: new FormControl('', Validators.required),
+    metaTitle: new FormControl('', Validators.required),
+    metaDescription: new FormControl('', Validators.required),
+    metaKeywords: new FormControl('', Validators.required),
     active: new FormControl(null, Validators.required),
     sira: new FormControl(null, Validators.required),
   });
@@ -46,6 +49,9 @@ export class PanelUrunlerComponent implements OnInit {
     urunPic2: '',
     urunPic3: '',
     urunDetay: '',
+    metaTitle: '',
+    metaDescription: '',
+    metaKeywords: '',
     active: null,
     sira: null};
   constructor(private apiservice: ApiService,  private toastr: ToastrService) { }
@@ -103,6 +109,9 @@ export class PanelUrunlerComponent implements OnInit {
       urunPic2: '',
       urunPic3: '',
       urunDetay: '',
+      metaTitle: '',
+      metaDescription: '',
+      metaKeywords: '',
       active: null,
       sira: null};
   }

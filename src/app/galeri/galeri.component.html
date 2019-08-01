@@ -5,16 +5,16 @@
   <div class="galeriMain">
     <h5>Galeri</h5>
     <div class="galeriContainer">
-      <figure *ngFor="let gal of galeri">
+      <div class="urunBoxCont" *ngFor="let gal of galeri">
         <div class="galeriBox">
           <a (click)="openModal(template,gal)">
             <img id="myImg" src="{{gal.galeriPic}}" class="img-fluid" alt="{{gal.galeriText}}"/>
           </a>
-          <figcaption>
+          <div class="urunBoxText">
             <span>{{gal.galeriText}}</span>
-          </figcaption>
+          </div>
         </div>
-      </figure>
+      </div>
     </div>
   </div>
 </div>

@@ -21,7 +21,7 @@
       flex-direction: row;
       flex-wrap:wrap;
       justify-content:flex-start;
-      figure{
+      .urunBoxCont{
         margin-right: 20px;
         &:last-child{
           margin: 0;
@@ -33,7 +33,7 @@
           background-color: white;
           margin-bottom: 20px;
           border: 1px solid #c78604;
-          figcaption{
+          .urunBoxText{
             margin-top: 20px;
             border-top: 1px solid #ffc107;
             span{
@@ -56,8 +56,21 @@
     @media  (max-width: 767px) {
       .markaContainer{
         justify-content:center;
-        figure {
-          margin: 0;
+        .urunBoxCont{
+          width: 100%;
+          .markaBox{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            .urunBoxText{
+              width: 80%;
+              text-align: center;
+              span{
+                margin: 0;
+              }
+            }
+          }
         }
       }
     }

@@ -23,12 +23,15 @@ if(isset($postdata) && !empty($postdata))
     $urunPic2 = mysqli_real_escape_string($con, $request->urunPic2);
     $urunPic3 = mysqli_real_escape_string($con, $request->urunPic3);
     $urunDetay = mysqli_real_escape_string($con, $request->urunDetay);
+    $metaTitle = mysqli_real_escape_string($con, $request->metaTitle);
+    $metaDescription = mysqli_real_escape_string($con, $request->metaDescription);
+    $metaKeywords = mysqli_real_escape_string($con, $request->metaKeywords);
     $active = mysqli_real_escape_string($con, $request->active);
     $sira = mysqli_real_escape_string($con, $request->sira);
 
 
     // Create.
-    $sql = "INSERT INTO `urunler`(`id`,`katid`,`urunAdi`, `urunPic1`, `urunPic2`, `urunPic3`, `urunDetay`, `active`, `sira`) VALUES (null,'{$katid}','{$urunAdi}','{$urunPic1}', '{$urunPic2}', '{$urunPic3}', '{$urunDetay}','{$active}', '{$sira}')";
+    $sql = "INSERT INTO `urunler`(`id`,`katid`,`urunAdi`, `urunPic1`, `urunPic2`, `urunPic3`, `urunDetay`, `metaTitle`, `metaDescription`, `metaKeywords`,  `active`, `sira`) VALUES (null,'{$katid}','{$urunAdi}','{$urunPic1}', '{$urunPic2}', '{$urunPic3}', '{$urunDetay}', '{$metaTitle}', '{$metaDescription}', '{$metaKeywords}','{$active}', '{$sira}')";
 
     if(mysqli_query($con,$sql))
     {
@@ -40,6 +43,9 @@ if(isset($postdata) && !empty($postdata))
             'urunPic2' => $urunPic2,
             'urunPic3' => $urunPic3,
             'urunDetay' => $urunDetay,
+            'metaTitle' => $metaTitle,
+            'metaDescription' => $metaDescription,
+            'metaKeywords' => $metaKeywords,
             'active' => $active,
             'sira' => $sira,
             'id'    => mysqli_insert_id($con)

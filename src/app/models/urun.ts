@@ -6,6 +6,9 @@ export  class  Urun {
     urunPic2: string;
     urunPic3: string;
     urunDetay: string;
+    metaTitle: string;
+    metaDescription: string;
+    metaKeywords: string;
     active: number;
     sira: number;
 }

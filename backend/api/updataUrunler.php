@@ -22,11 +22,14 @@ if(isset($postdata) && !empty($postdata))
     $urunPic2 = mysqli_real_escape_string($con, trim($request->urunPic2));
     $urunPic3 = mysqli_real_escape_string($con, trim($request->urunPic3));
     $urunDetay = mysqli_real_escape_string($con, trim($request->urunDetay));
+    $metaTitle = mysqli_real_escape_string($con, trim($request->metaTitle));
+    $metaDescription = mysqli_real_escape_string($con, trim($request->metaDescription));
+    $metaKeywords = mysqli_real_escape_string($con, trim($request->metaKeywords));
     $active = mysqli_real_escape_string($con, (int)$request->active);
     $sira = mysqli_real_escape_string($con, (int)$request->sira);
 
     // Update.
-    $sql = "UPDATE `slider` SET `katid`='$katid',`urunAdi`='$urunAdi',`urunPic1`='$urunPic1', `urunPic2`='$urunPic2', `urunPic3`='$urunPic3',  `urunDetay`='$urunDetay', `active`='$active',`sira`='$sira' WHERE `id` = '{$id}' LIMIT 1";
+    $sql = "UPDATE `slider` SET `katid`='$katid',`urunAdi`='$urunAdi',`urunPic1`='$urunPic1', `urunPic2`='$urunPic2', `urunPic3`='$urunPic3',  `urunDetay`='$urunDetay', `metaTitle`='$metaTitle', `metaDescription`='$metaDescription', `metaKeywords`='$metaKeywords', `active`='$active',`sira`='$sira' WHERE `id` = '{$id}' LIMIT 1";
 
     if(mysqli_query($con, $sql))
     {

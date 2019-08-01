@@ -3,6 +3,7 @@ import {ApiService} from '../services/api.service';
 import {Kategori} from '../models/kategori';
 import {Urun} from '../models/urun';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
+import { Title, Meta } from '@angular/platform-browser';
 
 
 @Component({
@@ -25,7 +26,7 @@ export class UrunlerComponent implements OnInit {
     active: null,
     sira: null
 };
-  constructor( private apiService: ApiService, private modalService: BsModalService) { }
+  constructor( private apiService: ApiService, private modalService: BsModalService, private titleService: Title, private meta: Meta) { }
   ngOnInit() {
     this.getKategori();
     this.getUrunler();
@@ -55,6 +56,9 @@ export class UrunlerComponent implements OnInit {
   urunDetay(urun: Urun) {
     this.urunDetayShow = true;
     this.selectedUrun = urun;
+    this.titleService.setTitle(urun.metaTitle);
+    this.meta.addTag({name: 'description', content: urun.metaDescription});
+    this.meta.addTag({name: 'keywords', content: urun.metaKeywords});
   }
   onkategori(kat: Kategori) {
     this.selectedKategori = kat;
