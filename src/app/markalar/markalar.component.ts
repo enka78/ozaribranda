@@ -11,13 +11,9 @@ import { Title, Meta } from '@angular/platform-browser';
 export class MarkalarComponent implements OnInit {
 
   markalar: Marka[];
-  title = 'özarı branda mehmet balarısı';
-  keywords = 'Branda, Çadır,Tente, Kamp Çadırı,1100 PVC,450 PVC TENTELİK, Yerli Akrilik ,  ' +
-    'Avrupa Akrilik , File, Jüt,   Gazebo Çardak,  Katlanır Tente ,  Örümcek Çadır ,  ' +
-    'Oto Brandası ,  Katlanır Masa ,  Ahşap Masa ,  Katlanır Sandalye ,  Ahşap Rejisör , ' +
-    'Ebatlı Branda , Rulo Branda , Minder, Armut Minder,  Asma Germe ,  Konfeksiyon Torbası ,  ' +
-    'Konfeksiyon Torbası ,   Taşıma Torbası , Kapsül, Halka,  Fermuar , Toka,  Off Road Araç Yan Tentesi';
-  description = 'Branda,  Çadır ve Malzemeleri';
+  title = 'Özarı Branda Markalar';
+  keywords = 'Branda, Çadır,  Tente, Kamp Çadırı,  PVC,  Tente, Akrilik, Jüt,  Gazebo Çardak';
+  description = 'Özarı Branda olarak pvc, pilsa, polyester ve pamuk kumaş çeşitlerimiz ile hizmetinizdeyiz.';
   constructor(private apiservice: ApiService, private titleService: Title, private meta: Meta) { }
 
   ngOnInit() {

@@ -8,7 +8,7 @@
       <div class="urunBoxCont" *ngFor="let gal of galeri">
         <div class="galeriBox">
           <a (click)="openModal(template,gal)">
-            <img id="myImg" src="{{gal.galeriPic}}" class="img-fluid" alt="{{gal.galeriText}}"/>
+            <img id="myImg" src="{{gal.galeriPic}}" class="img-fluid" alt="{{gal.galeriText}}" title="{{gal.galeriText}}"/>
           </a>
           <div class="urunBoxText">
             <span>{{gal.galeriText}}</span>

@@ -47,7 +47,7 @@
                 <div  class="urunBoxCont" *ngFor="let urun of this.selectedUrunler">
                   <div class="urunBox">
                     <a (click)="urunDetay(urun)"   data-toggle="modal" data-target="#exampleModalCenter">
-                      <img src="{{urun.urunPic1}}" class="img-fluid" alt="sunberella"/>
+                      <img src="{{urun.urunPic1}}" class="img-fluid" alt="sunberella" title="{{urun.urunAdi}}"/>
                     </a>
                     <div class="urunBoxText">
                       <span>{{urun.urunAdi}}</span>
@@ -69,17 +69,17 @@
             <div class="row d-flex justify-content-around">
               <div class="col-md-4 mb-2">
                 <a (click)="openModal(template,selectedUrun.urunPic1)">
-                  <img src="{{selectedUrun.urunPic1}}" class="img-thumbnail"/>
+                  <img src="{{selectedUrun.urunPic1}}" class="img-thumbnail" title="{{selectedUrun.urunAdi}}"/>
                 </a>
               </div>
               <div class="col-md-4 mb-2">
                 <a (click)="openModal(template,selectedUrun.urunPic2)">
-                  <img src="{{selectedUrun.urunPic2}}" class="img-thumbnail"/>
+                  <img src="{{selectedUrun.urunPic2}}" class="img-thumbnail" title="{{selectedUrun.urunAdi}}"/>
                 </a>
               </div>
               <div class="col-md-4">
                 <a (click)="openModal(template,selectedUrun.urunPic3)">
-                  <img src="{{selectedUrun.urunPic3}}" class="img-thumbnail"/>
+                  <img src="{{selectedUrun.urunPic3}}" class="img-thumbnail" title="{{selectedUrun.urunAdi}}"/>
                 </a>
               </div>
             </div>
