@@ -10,6 +10,7 @@ import {Router} from '@angular/router';
 export class AppComponent {
   @ViewChild('scrollTop') scrollElm: ElementRef;
   @HostListener('window:scroll', []) // for window scroll events
+
   onScroll() {
     if (window.pageYOffset > 200) {
       this.renderer.setStyle(this.scrollElm.nativeElement, 'visibility', 'visible');

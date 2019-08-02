@@ -57,8 +57,8 @@ export class UrunlerComponent implements OnInit {
     this.urunDetayShow = true;
     this.selectedUrun = urun;
     this.titleService.setTitle(urun.metaTitle);
-    this.meta.addTag({name: 'description', content: urun.metaDescription});
-    this.meta.addTag({name: 'keywords', content: urun.metaKeywords});
+    this.meta.updateTag({name: 'description', content: urun.metaDescription});
+    this.meta.updateTag({name: 'keywords', content: urun.metaKeywords});
   }
   onkategori(kat: Kategori) {
     this.selectedKategori = kat;
