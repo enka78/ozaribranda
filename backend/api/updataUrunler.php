@@ -29,7 +29,7 @@ if(isset($postdata) && !empty($postdata))
     $sira = mysqli_real_escape_string($con, (int)$request->sira);
 
     // Update.
-    $sql = "UPDATE `slider` SET `katid`='$katid',`urunAdi`='$urunAdi',`urunPic1`='$urunPic1', `urunPic2`='$urunPic2', `urunPic3`='$urunPic3',  `urunDetay`='$urunDetay', `metaTitle`='$metaTitle', `metaDescription`='$metaDescription', `metaKeywords`='$metaKeywords', `active`='$active',`sira`='$sira' WHERE `id` = '{$id}' LIMIT 1";
+    $sql = "UPDATE `urunler` SET `katid`='$katid',`urunAdi`='$urunAdi',`urunPic1`='$urunPic1', `urunPic2`='$urunPic2', `urunPic3`='$urunPic3',  `urunDetay`='$urunDetay', `metaTitle`='$metaTitle', `metaDescription`='$metaDescription', `metaKeywords`='$metaKeywords', `active`='$active',`sira`='$sira' WHERE `id` = '{$id}' LIMIT 1";
 
     if(mysqli_query($con, $sql))
     {
