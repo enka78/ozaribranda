@@ -31,6 +31,7 @@ export class IletisimComponent implements OnInit {
     this.titleService.setTitle(this.title);
     this.meta.updateTag({name: 'description', content: this.description});
     this.meta.updateTag({name: 'keywords', content: this.keywords});
+    this.meta.updateTag({name: 'title', content: this.title});
   }
 
   onSubmit() {
