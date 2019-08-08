@@ -48,6 +48,7 @@ export class UrunlerComponent implements OnInit {
     });
   }
 
+
   getUrunler() {
     this.apiService.readUrunler().subscribe((urun: Urun[]) => {
       this.urunler = urun;
@@ -62,6 +63,8 @@ export class UrunlerComponent implements OnInit {
     this.meta.updateTag({name: 'description', content: urun.metaDescription});
     this.meta.updateTag({name: 'keywords', content: urun.metaKeywords});
     this.meta.updateTag({name: 'title', content: urun.urunAdi});
+    const urunLink = urun.urunAdi.replace(/\s/gi, '').toLowerCase();
+    this.router.navigate(['/' +  urunLink ]);
   }
   onkategori(kat: Kategori) {
     this.selectedKategori = kat;
