@@ -4,6 +4,7 @@ import {Kategori} from '../models/kategori';
 import {Urun} from '../models/urun';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 import { Title, Meta } from '@angular/platform-browser';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -15,7 +16,8 @@ export class UrunlerComponent implements OnInit {
   modalRef: BsModalRef;
   fileUrl: string;
   kategoriler: any;
-  selectedLevel: Kategori;
+  selectedLevel: any;
+
   urunler: Urun[];
   urunDetayShow: boolean = false;
   selectedUrun: Urun;
@@ -26,7 +28,7 @@ export class UrunlerComponent implements OnInit {
     active: null,
     sira: null
 };
-  constructor( private apiService: ApiService, private modalService: BsModalService, private titleService: Title, private meta: Meta) { }
+  constructor( private apiService: ApiService, private modalService: BsModalService, private titleService: Title, private meta: Meta, private router: Router) { }
   ngOnInit() {
     this.getKategori();
     this.getUrunler();
@@ -72,6 +74,7 @@ export class UrunlerComponent implements OnInit {
     this.selectedKategori = this.selectedLevel;
     this.urunDetayShow = false;
     this.selectedUrunler = this.urunler.filter(x => x.katid === this.selectedLevel.id);
+    this.router.navigate(['/' +  this.selectedLevel.katLink ]);
   }
   openModal(template: TemplateRef<any>, img: string) {
     this.modalRef = this.modalService.show(template);
