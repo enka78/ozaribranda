@@ -17,7 +17,7 @@ export class NavbarlinkComponent implements OnInit {
   }
   getKategori() {
     this.apiService.readKategori().subscribe((kategori: Kategori[]) => {
-      this.urunlerLink = kategori[0].kategoriAdi.replace(/\s/gi, '').toLowerCase();
+      this.urunlerLink = kategori[0].kategoriAdi.replace(/\s/gi, '-').replace(/ş/gi, 's').replace(/ç/gi, 'c').replace(/ü/gi, 'u').replace(/ı/gi, 'i').replace(/ğ/gi, 'g').replace(/ö/gi, 'o').toLowerCase();
     });
   }
 

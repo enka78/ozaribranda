@@ -44,7 +44,7 @@ export class UrunlerComponent implements OnInit {
 
   setKatLink() {
     this.kategoriler.forEach(function (kat) {
-      kat.katLink = kat.kategoriAdi.replace(/\s/gi, '').toLowerCase();
+      kat.katLink = kat.kategoriAdi.replace(/\s/gi, '-').replace(/ş/gi, 's').replace(/ç/gi, 'c').replace(/ü/gi, 'u').replace(/ı/gi, 'i').replace(/ğ/gi, 'g').replace(/ö/gi, 'o').toLowerCase();
     });
   }
 
@@ -63,7 +63,7 @@ export class UrunlerComponent implements OnInit {
     this.meta.updateTag({name: 'description', content: urun.metaDescription});
     this.meta.updateTag({name: 'keywords', content: urun.metaKeywords});
     this.meta.updateTag({name: 'title', content: urun.urunAdi});
-    const urunLink = urun.urunAdi.replace(/\s/gi, '').toLowerCase();
+    const urunLink = urun.urunAdi.replace(/\s/gi, '-').replace(/ş/gi, 's').replace(/ç/gi, 'c').replace(/ü/gi, 'u').replace(/ı/gi, 'i').replace(/ğ/gi, 'g').replace(/ö/gi, 'o').toLowerCase();
     this.router.navigate(['/' +  urunLink ]);
   }
   onkategori(kat: Kategori) {
@@ -71,6 +71,8 @@ export class UrunlerComponent implements OnInit {
     this.urunDetayShow = false;
     this.selectedUrunler = this.urunler.filter(x => x.katid === kat.id);
     window.scrollTo({ left: 0, top: 0, behavior: 'smooth' });
+    this.titleService.setTitle(kat.kategoriAdi);
+    this.meta.updateTag({name: 'title', content: kat.kategoriAdi});
   }
 
   onChange () {
